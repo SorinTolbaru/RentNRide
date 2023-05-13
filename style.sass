@@ -1,0 +1,224 @@
+// vars
+$apply-padding: 1% 10% 1% 10%
+
+.checked 
+  color: orange
+
+
+
+*
+    transition:0.2s
+    scroll-behavior: smooth
+
+// special props    
+a
+    color:#2a2e3b
+    text-decoration: none
+    &:hover
+        color: #ED2B2A
+        transition:0.5s
+
+body
+    font-family: Arial
+    margin: 0
+
+
+h1, h3
+    color: #ED2B2A
+
+// navigation
+nav
+    display: flex
+    justify-content: space-between
+    padding: $apply-padding
+    border-bottom: 1px solid lightgrey
+    align-items: center
+    position: fixed
+    box-sizing: border-box
+    width: 100%
+    height: 6vh
+    background: white
+
+.logo-N
+    transform: rotate(16deg)
+    display: inline-block
+    color: #ED2B2A
+
+.nav-elements
+    display: flex
+    gap: 20px
+
+.logo
+    font-size: 30px
+    font-weight: bold
+    color:#2a2e3b
+
+#choose-currency
+    font-size: 16px
+    color: #038489
+    border: none
+    outline: none
+
+// main
+
+main
+    box-sizing: border-box
+    padding: 9vh 15% 0% 15%
+
+.rent-form
+    width: 100%
+    height: 500px
+    background-image: url("./imgs/car-banner.jpg")
+    background-repeat: no-repeat
+    background-size: cover
+    background-position: bottom
+    border-radius: 2px
+    color: white
+    padding: 10% 5%
+    box-sizing: border-box
+    text-shadow: 0px 1px 2px rgba(6, 7, 10, 0.8)
+    input[type="submit"]
+        cursor: pointer
+        margin-top: 2%
+        border: none
+        font-size: 18px
+        background-color: #ED2B2A
+        width: 40%
+        height: 20%
+        color: white
+        font-weight: bold
+        border-radius: 2500rem
+    input[type="date"]
+
+
+    
+
+.about-us
+    padding: 6% 0% 6% 0%
+    p
+        font-size: 14px
+
+.faq
+    padding: 0% 15% 6% 15%
+    h1
+        text-align: center
+
+.q-title
+    display: flex
+    justify-content: space-between
+
+
+.question
+    border-bottom: 1px solid lightgrey
+    user-select: none
+    cursor: pointer
+
+.q-answer
+    display: none
+
+.rotate-arrow
+    transform: rotate(180deg)
+
+.arrow-show
+    display: inline-block
+    height: 18px
+    width: 18px
+    
+
+// swiper
+
+
+.rev-comment
+    min-height: 70px
+
+.swiper 
+    width: 100%
+    height: 100%
+    
+
+.swiper-slide 
+    display: flex !important
+    flex-direction: column
+    justify-content: center
+    padding: 1%
+    gap: 5px
+    box-sizing: border-box
+    height: 300px
+    width: 31% !important
+    text-align: center
+    font-size: 18px
+    border: 1px solid lightgrey
+    display: flex
+    align-items: center
+    border-radius: 5px
+    
+
+.swiper-slide img 
+    display: block
+    width: 100%
+    height: 100%
+    object-fit: cover
+
+.rev-comment
+    font-size: 14px    
+
+.rev-photo
+    width: 100px
+    height: 100px
+    border-radius: 100%
+    border: 2px solid #FEBE10
+
+// must change
+.Mark-John,.Grace-Thompson,.Amelia-Parker,.Benjamin-Young,.Samuel-Green
+    background-image: url("./imgs/reviews-photos/Mark-John.jpg")
+    background-size: cover
+    background-position: center
+    background-repeat: no-repeat
+
+.Grace-Thompson
+    background-image: url("./imgs/reviews-photos/Grace-Thompson.jpg")
+
+.Amelia-Parker
+    background-image: url("./imgs/reviews-photos/Amelia-Parker.jpg")
+    background-position: top
+
+.Benjamin-Young
+    background-image: url("./imgs/reviews-photos/Benjamin-Young.jpg")
+
+.Samuel-Green
+    background-image: url("./imgs/reviews-photos/Samuel-Green.jpg")
+
+
+.top-cars-week
+    display: flex
+    flex-direction: column
+    width: 100%
+    height: 250px
+
+.cars
+    height: 100%
+    display: flex
+    justify-content: space-between
+
+.car
+    width: 33%
+    height: 100%
+    border: 1px solid lightgrey
+    border-radius: 5px
+
+// footer
+footer
+    padding: 10% 30% 2% 30%
+    text-align: center
+
+.footer-nav
+    display: flex
+    justify-content: space-between
+    font-size: 15px
+    padding: 3% 3%
+    font-weight: bold
+
+
+.copyright
+    p
+        font-size: 12px
