@@ -92,6 +92,18 @@ main {
   font-weight: bold;
   border-radius: 2500rem;
 }
+
+.rent-page {
+  display: flex;
+  gap: 10px;
+  background-image: none;
+  padding: 1% 1%;
+  height: auto;
+}
+.rent-page div {
+  display: flex;
+}
+
 .about-us {
   padding: 6% 0% 6% 0%;
 }

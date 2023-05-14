@@ -4,9 +4,57 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="style.css">
     <title>RentNRide| Renting</title>
 </head>
 <body>
-    
+    <form method="post" class="rent-form rent-page">
+        <div class="pick-drop-location">
+            <select name="pick-location" id="pickL">
+                <option value="Berlin">Berlin</option>
+                <option value="Munich">Munich</option>
+                <option value="Hamburg">Hamburg</option>
+                <option value="Bucharest">Bucharest</option>
+                <option value="Cluj">Cluj</option>
+                <option value="Timisoara">Timisoara</option>
+                <option value="Rome">Rome</option>
+                <option value="Milan">Milan</option>
+                <option value="Venice">Venice</option>
+                <option value="Paris">Paris</option>
+                <option value="Marseille">Marseille</option>
+                <option value="Lyon">Lyon</option>
+                <option value="Sofia">Sofia</option>
+                <option value="Varna">Varna</option>
+                <option value="Plovdiv">Plovdiv</option>
+            </select>
+            <select name="drop-location" id="dropL">
+                <option value="Berlin">Berlin</option>
+                <option value="Munich">Munich</option>
+                <option value="Hamburg">Hamburg</option>
+                <option value="Bucharest">Bucharest</option>
+                <option value="Cluj">Cluj</option>
+                <option value="Timisoara">Timisoara</option>
+                <option value="Rome">Rome</option>
+                <option value="Milan">Milan</option>
+                <option value="Venice">Venice</option>
+                <option value="Paris">Paris</option>
+                <option value="Marseille">Marseille</option>
+                <option value="Lyon">Lyon</option>
+                <option value="Sofia">Sofia</option>
+                <option value="Varna">Varna</option>
+                <option value="Plovdiv">Plovdiv</option>
+            </select>
+        </div>
+        <div class="pick-drop-date">
+            <input type="date" name="pick-date" id="pickD">
+            <input type="date" name="drop-date" id="dropD">
+            <input type="time" name="pick-time" id="pickT" value="10:00">
+            <input type="time" name="drop-time" id="dropT" value="10:00">
+        </div>
+        <input type="submit" value="Find a Car" id="submit">
+    </form>
+    <script src="script.js"></script>
 </body>
 </html>

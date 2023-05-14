@@ -13,17 +13,29 @@ $(document).ready(function() {
     $("#pickD").attr("value",today.join("-"))
     $("#dropD").attr("value",tomorrow.join("-"))
 
+
     //get form data
     $(".rent-form").on("submit",(e)=>{
         e.preventDefault();
-        
-        const [pickL,dropL,pickD,dropD,pickT,dropT] = [
-            $("#pickL").val(),$("#dropL").val(),$("#pickD").val(),$("#dropD").val(),$("#pickT").val(),$("#dropT").val()
-        ];
 
-        
+        formElements.forEach(element =>{
+            localStorage.setItem(element.attr("id"),element.val())
+        })
+
+        if(window.location.pathname != "/rent.html"){
+            window.location.href = "rent.html";
+        }
+
     })
     
+    //set form data on start if available
+    const formElements = [$("#pickL"),$("#dropL"),$("#pickD"),$("#dropD"),$("#pickT"),$("#dropT")];
+    if(localStorage.getItem("pickL") != null){
+        formElements.forEach(element =>{
+            element.val(localStorage.getItem(element.attr("id")));
+        })
+    }
+
     
   });
   
