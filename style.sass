@@ -65,6 +65,9 @@ main
     box-sizing: border-box
     padding: 9vh 15% 0% 15%
 
+.main-rent
+    padding: 0 15% !important
+
 .rent-form
     width: 100%
     height: 500px
@@ -89,15 +92,6 @@ main
         font-weight: bold
         border-radius: 2500rem
 
-.rent-page
-    display: flex
-    gap: 10px
-    background-image: none
-    padding: 1% 1%
-    height: auto
-    div
-        display: flex
-    
 
 .about-us
     padding: 6% 0% 6% 0%
@@ -228,3 +222,53 @@ footer
 .copyright
     p
         font-size: 12px
+
+
+//rent.html
+.rent-page
+    display: flex
+    justify-content: center
+    align-items: center
+    gap: 10px
+    background-image: none
+    padding-top:7vh
+    padding-bottom: 1vh
+
+    div
+        display: flex
+        gap: 10px
+    
+.available-cars-settings
+    display: flex
+    height: 88vh
+
+.settings-container
+    width: 15%
+    border-right: 1px solid lightgrey
+    display: flex
+    flex-direction: column
+    align-items: center
+
+
+.available-cars
+    width: 85%
+
+.setting-container
+    border-bottom: 1px solid lightgrey
+    padding-bottom: 10px
+    h4
+        margin: 10px 0px
+
+.setting
+    padding: 5px 0px
+    #price
+        width: 30%
+
+.filter-container
+    display: flex
+    align-items: center
+    justify-content: space-around
+
+.reset-button
+    cursor: pointer
+    color: red

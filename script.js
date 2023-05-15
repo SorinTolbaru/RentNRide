@@ -15,26 +15,29 @@ $(document).ready(function() {
 
 
     //get form data
-    $(".rent-form").on("submit",(e)=>{
+    $(".rent-form,.rent-page").on("submit",(e)=>{
         e.preventDefault();
-
-        formElements.forEach(element =>{
-            localStorage.setItem(element.attr("id"),element.val())
-        })
-
-        if(window.location.pathname != "/rent.html"){
-            window.location.href = "rent.html";
-        }
-
+        formElements.forEach(element =>localStorage.setItem(element.attr("id"),element.val()))
+        window.location.pathname != "/rent.html" ? window.location.href = "rent.html": null;
     })
     
     //set form data on start if available
     const formElements = [$("#pickL"),$("#dropL"),$("#pickD"),$("#dropD"),$("#pickT"),$("#dropT")];
-    if(localStorage.getItem("pickL") != null){
-        formElements.forEach(element =>{
-            element.val(localStorage.getItem(element.attr("id")));
-        })
-    }
+    localStorage.getItem("pickL") != null ? formElements.forEach(element =>element.val(localStorage.getItem(element.attr("id")))) : null
+    
+
+    //set price range
+    $("#price").val($("#price-range").val());
+    
+    $("#price-range").on("mousedown",function(){
+        $("#price-range").on("mousemove",function(){
+            $("#price").val($("#price-range").val());
+        })  
+    })
+
+    $("#price").on("change",function(){
+        $("#price-range").val($("#price").val())
+    })
 
     
   });
