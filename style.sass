@@ -1,27 +1,24 @@
 // vars
 $apply-padding: 1% 10% 1% 10%
 
-.checked 
-  color: orange
-
-
+.checked
+    color: orange
 
 *
-    transition:0.2s
+    transition: 0.2s
     scroll-behavior: smooth
 
 // special props    
 a
-    color:#2a2e3b
+    color: #2a2e3b
     text-decoration: none
     &:hover
         color: #ED2B2A
-        transition:0.5s
+        transition: 0.5s
 
 body
     font-family: Arial
     margin: 0
-
 
 h1, h3
     color: #ED2B2A
@@ -51,9 +48,10 @@ nav
 .logo
     font-size: 30px
     font-weight: bold
-    color:#2a2e3b
+    color: #2a2e3b
 
 #choose-currency
+    cursor: pointer
     font-size: 16px
     color: #038489
     border: none
@@ -92,7 +90,6 @@ main
         font-weight: bold
         border-radius: 2500rem
 
-
 .about-us
     padding: 6% 0% 6% 0%
     p
@@ -106,7 +103,6 @@ main
 .q-title
     display: flex
     justify-content: space-between
-
 
 .question
     border-bottom: 1px solid lightgrey
@@ -123,20 +119,17 @@ main
     display: inline-block
     height: 18px
     width: 18px
-    
 
 // swiper
-
 
 .rev-comment
     min-height: 70px
 
-.swiper 
+.swiper
     width: 100%
     height: 100%
-    
 
-.swiper-slide 
+.swiper-slide
     display: flex !important
     flex-direction: column
     justify-content: center
@@ -151,16 +144,15 @@ main
     display: flex
     align-items: center
     border-radius: 5px
-    
 
-.swiper-slide img 
+.swiper-slide img
     display: block
     width: 100%
     height: 100%
     object-fit: cover
 
 .rev-comment
-    font-size: 14px    
+    font-size: 14px
 
 .rev-photo
     width: 100px
@@ -187,7 +179,6 @@ main
 
 .Samuel-Green
     background-image: url("./imgs/reviews-photos/Samuel-Green.jpg")
-
 
 .top-cars-week
     display: flex
@@ -218,11 +209,9 @@ footer
     padding: 3% 3%
     font-weight: bold
 
-
 .copyright
     p
         font-size: 12px
-
 
 //rent.html
 .rent-page
@@ -231,27 +220,25 @@ footer
     align-items: center
     gap: 10px
     background-image: none
-    padding-top:7vh
+    padding-top: 7vh
     padding-bottom: 1vh
 
     div
         display: flex
         gap: 10px
-    
+
 .available-cars-settings
     display: flex
     height: 88vh
 
 .settings-container
     width: 15%
-    border-right: 1px solid lightgrey
+    border: 1px solid lightgrey
+    border-bottom: none
     display: flex
     flex-direction: column
-    align-items: center
+    position: fixed
 
-
-.available-cars
-    width: 85%
 
 .setting-container
     border-bottom: 1px solid lightgrey
@@ -263,12 +250,34 @@ footer
     padding: 5px 0px
     #price
         width: 30%
+    .select-all
+        font-weight: bold
 
 .filter-container
     display: flex
     align-items: center
-    justify-content: space-around
+    justify-content: space-evenly
+    border-bottom: 1px solid lightgrey
 
 .reset-button
     cursor: pointer
     color: red
+
+input[type="checkbox"],label
+    cursor: pointer
+    user-select: none
+
+.available-cars
+    width: 85%
+    padding-left: 25%
+
+
+
+.rentableCar
+    display: flex
+    justify-content: space-evenly
+    align-items: center
+    width: 100%
+    height: 100px
+    border: 1px solid lightgrey
+    margin: 10px

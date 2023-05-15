@@ -1,0 +1,263 @@
+[
+    {
+      "carname": "Audi A1",
+      "car_type": "Small",
+      "rental_agency": "Klass"
+    },
+    {
+      "carname": "BMW X3",
+      "car_type": "SUV",
+      "rental_agency": "Autonom"
+    },
+    {
+      "carname": "Mercedes-Benz E-Class",
+      "car_type": "Large",
+      "rental_agency": "National"
+    },
+    {
+      "carname": "Tesla Model X",
+      "car_type": "SUV",
+      "rental_agency": "Europcar"
+    },
+    {
+      "carname": "Volkswagen Transporter",
+      "car_type": "Van",
+      "rental_agency": "Payless"
+    },
+    {
+      "carname": "Ferrari 458 Italia",
+      "car_type": "Luxury",
+      "rental_agency": "Europcar"
+    },
+    {
+      "carname": "Audi A3",
+      "car_type": "Small",
+      "rental_agency": "Wheego"
+    },
+    {
+      "carname": "BMW 5 Series",
+      "car_type": "Medium",
+      "rental_agency": "Payless"
+    },
+    {
+      "carname": "Mercedes-Benz S-Class",
+      "car_type": "Large",
+      "rental_agency": "Autonom"
+    },
+    {
+      "carname": "Tesla Model S",
+      "car_type": "SUV",
+      "rental_agency": "Alamo"
+    },
+    {
+      "carname": "Volkswagen Golf",
+      "car_type": "Small",
+      "rental_agency": "Pricecarz"
+    },
+    {
+      "carname": "Lamborghini Huracan",
+      "car_type": "Luxury",
+      "rental_agency": "Europcar"
+    },
+    {
+      "carname": "Audi Q3",
+      "car_type": "Small",
+      "rental_agency": "Pricecarz"
+    },
+    {
+      "carname": "BMW 3 Series",
+      "car_type": "Medium",
+      "rental_agency": "Wheego"
+    },
+    {
+      "carname": "Mercedes-Benz C-Class",
+      "car_type": "Large",
+      "rental_agency": "Pricecarz"
+    },
+    {
+      "carname": "Tesla Model 3",
+      "car_type": "SUV",
+      "rental_agency": "National"
+    },
+    {
+      "carname": "Volkswagen Tiguan",
+      "car_type": "SUV",
+      "rental_agency": "Autonom"
+    },
+    {
+      "carname": "Porsche 911",
+      "car_type": "Luxury",
+      "rental_agency": "Payless"
+    },
+    {
+      "carname": "Audi A4",
+      "car_type": "Small",
+      "rental_agency": "Klass"
+    },
+    {
+      "carname": "BMW 7 Series",
+      "car_type": "Large",
+      "rental_agency": "National"
+    },
+    {
+      "carname": "Mercedes-Benz GLE",
+      "car_type": "SUV",
+      "rental_agency": "Wheego"
+    },
+    {
+        "carname": "Volvo XC40",
+        "car_type": "SUV",
+        "rental_agency": "Autonom"
+    },
+    {
+        "carname": "Toyota Camry",
+        "car_type": "Medium",
+        "rental_agency": "National"
+    },
+    {
+        "carname": "Honda Civic",
+        "car_type": "Small",
+        "rental_agency": "Klass"
+    },
+    {
+        "carname": "Ford Mustang",
+        "car_type": "Sports",
+        "rental_agency": "Payless"
+    },
+    {
+        "carname": "Chevrolet Tahoe",
+        "car_type": "SUV",
+        "rental_agency": "Europcar"
+    },
+    {
+        "carname": "Nissan Altima",
+        "car_type": "Medium",
+        "rental_agency": "Wheego"
+    },
+    {
+        "carname": "Jeep Wrangler",
+        "car_type": "SUV",
+        "rental_agency": "Pricecarz"
+    },
+    {
+        "carname": "Hyundai Elantra",
+        "car_type": "Small",
+        "rental_agency": "Alamo"
+    },
+    {
+        "carname": "Kia Sportage",
+        "car_type": "SUV",
+        "rental_agency": "National"
+    },
+    {
+        "carname": "Mazda CX-5",
+        "car_type": "SUV",
+        "rental_agency": "Autonom"
+    },
+    {
+        "carname": "Subaru Outback",
+        "car_type": "SUV",
+        "rental_agency": "Payless"
+    },
+    {
+        "carname": "Lexus ES",
+        "car_type": "Medium",
+        "rental_agency": "Europcar"
+    },
+    {
+        "carname": "Infiniti Q50",
+        "car_type": "Medium",
+        "rental_agency": "Wheego"
+    },
+    {
+        "carname": "Acura MDX",
+        "car_type": "SUV",
+        "rental_agency": "Pricecarz"
+    },
+    {
+        "carname": "GMC Sierra",
+        "car_type": "Truck",
+        "rental_agency": "Klass"
+    },
+    {
+        "carname": "Chrysler Pacifica",
+        "car_type": "Van",
+        "rental_agency": "National"
+    },
+    {
+        "carname": "Mercedes-Benz GLC",
+        "car_type": "SUV",
+        "rental_agency": "Alamo"
+    },
+    {
+        "carname": "BMW i3",
+        "car_type": "Electric",
+        "rental_agency": "Autonom"
+    },
+    {
+        "carname": "Audi Q5",
+        "car_type": "Medium",
+        "rental_agency": "Europcar"
+    },
+    {
+        "carname": "Volkswagen Passat",
+        "car_type": "Medium",
+        "rental_agency": "Payless"
+    },
+    {
+        "carname": "Ford Explorer",
+        "car_type": "SUV",
+        "rental_agency": "Wheego"
+    },
+    {
+        "carname": "Toyota Highlander",
+        "car_type": "SUV",
+        "rental_agency":"Autonom"
+    },
+    {
+        "carname": "Nissan Rogue",
+        "car_type": "SUV",
+        "rental_agency": "Pricecarz"
+    },
+    {
+        "carname": "Honda Accord",
+        "car_type": "Medium",
+        "rental_agency": "Klass"
+    },
+    {
+        "carname": "Chevrolet Cruze",
+        "car_type": "Small",
+        "rental_agency": "National"
+    },
+    {
+        "carname": "Hyundai Tucson",
+        "car_type": "SUV",
+        "rental_agency": "Alamo"
+    },
+    {
+        "carname": "Mazda3",
+        "car_type": "Small",
+        "rental_agency": "Autonom"
+    },
+    {
+        "carname": "Subaru Forester",
+        "car_type": "SUV",
+        "rental_agency": "Europcar"
+    },
+    {
+        "carname": "Kia Optima",
+        "car_type": "Medium",
+        "rental_agency": "Payless"
+    },
+    {
+        "carname": "Ford F-150",
+        "car_type": "Truck",
+        "rental_agency": "Wheego"
+    },
+    {
+        "carname": "Toyota Corolla",
+        "car_type": "Small",
+        "rental_agency": "Pricecarz"
+    }
+
+]

@@ -1,190 +1,233 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
-    <link rel="icon" href="./imgs/ico.png" type="image/icon type">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://code.jquery.com/jquery-3.6.4.min.js"
+      integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
+      crossorigin="anonymous"
+    ></script>
+    <link rel="icon" href="./imgs/ico.png" type="image/icon type" />
+    <link rel="stylesheet" href="style.css" />
     <title>RentNRide| Renting</title>
-</head>
-<body>
+  </head>
+
+  <body>
     <nav>
-        <div class="logo">Rent<span class="logo-N">N</span><u>Ride</u></div>
-        <div class="nav-elements">
-            <a href="index.html">Home</a>
-            <select name="currency" id="choose-currency">
-                <option value="USD">USD</option>
-                <option value="EURO">EURO</option>
-                <option value="Lei">Lei</option>
-            </select>
-        </div>
+      <div class="logo">
+        <a href="index.html">Rent<span class="logo-N">N</span><u>Ride</u></a>
+      </div>
+      <div class="nav-elements">
+        <select name="currency" id="choose-currency">
+          <option value="USD">USD</option>
+          <option value="EURO">EURO</option>
+          <option value="Lei">Lei</option>
+        </select>
+      </div>
     </nav>
 
     <form method="post" class="rent-page">
-    <div class="pick-drop-location">
+      <div class="pick-drop-location">
         <select name="pick-location" id="pickL">
-            <option value="Berlin">Berlin</option>
-            <option value="Munich">Munich</option>
-            <option value="Hamburg">Hamburg</option>
-            <option value="Bucharest">Bucharest</option>
-            <option value="Cluj">Cluj</option>
-            <option value="Timisoara">Timisoara</option>
-            <option value="Rome">Rome</option>
-            <option value="Milan">Milan</option>
-            <option value="Venice">Venice</option>
-            <option value="Paris">Paris</option>
-            <option value="Marseille">Marseille</option>
-            <option value="Lyon">Lyon</option>
-            <option value="Sofia">Sofia</option>
-            <option value="Varna">Varna</option>
-            <option value="Plovdiv">Plovdiv</option>
+          <option value="Berlin">Berlin</option>
+          <option value="Munich">Munich</option>
+          <option value="Hamburg">Hamburg</option>
+          <option value="Bucharest">Bucharest</option>
+          <option value="Cluj">Cluj</option>
+          <option value="Timisoara">Timisoara</option>
+          <option value="Rome">Rome</option>
+          <option value="Milan">Milan</option>
+          <option value="Venice">Venice</option>
+          <option value="Paris">Paris</option>
+          <option value="Marseille">Marseille</option>
+          <option value="Lyon">Lyon</option>
+          <option value="Sofia">Sofia</option>
+          <option value="Varna">Varna</option>
+          <option value="Plovdiv">Plovdiv</option>
         </select>
         <select name="drop-location" id="dropL">
-            <option value="Berlin">Berlin</option>
-            <option value="Munich">Munich</option>
-            <option value="Hamburg">Hamburg</option>
-            <option value="Bucharest">Bucharest</option>
-            <option value="Cluj">Cluj</option>
-            <option value="Timisoara">Timisoara</option>
-            <option value="Rome">Rome</option>
-            <option value="Milan">Milan</option>
-            <option value="Venice">Venice</option>
-            <option value="Paris">Paris</option>
-            <option value="Marseille">Marseille</option>
-            <option value="Lyon">Lyon</option>
-            <option value="Sofia">Sofia</option>
-            <option value="Varna">Varna</option>
-            <option value="Plovdiv">Plovdiv</option>
+          <option value="Berlin">Berlin</option>
+          <option value="Munich">Munich</option>
+          <option value="Hamburg">Hamburg</option>
+          <option value="Bucharest">Bucharest</option>
+          <option value="Cluj">Cluj</option>
+          <option value="Timisoara">Timisoara</option>
+          <option value="Rome">Rome</option>
+          <option value="Milan">Milan</option>
+          <option value="Venice">Venice</option>
+          <option value="Paris">Paris</option>
+          <option value="Marseille">Marseille</option>
+          <option value="Lyon">Lyon</option>
+          <option value="Sofia">Sofia</option>
+          <option value="Varna">Varna</option>
+          <option value="Plovdiv">Plovdiv</option>
         </select>
-    </div>
-    <div class="pick-drop-date">
-        <input type="date" name="pick-date" id="pickD">
-        <input type="date" name="drop-date" id="dropD">
-        <input type="time" name="pick-time" id="pickT" value="10:00">
-        <input type="time" name="drop-time" id="dropT" value="10:00">
-    </div>
-    <input type="submit" value="Find a car" id="submit">
+      </div>
+      <div class="pick-drop-date">
+        <input type="date" name="pick-date" id="pickD" />
+        <input type="date" name="drop-date" id="dropD" />
+        <input type="time" name="pick-time" id="pickT" value="10:00" />
+        <input type="time" name="drop-time" id="dropT" value="10:00" />
+      </div>
+      <input type="submit" value="Find a car" id="submit" />
     </form>
 
     <main class="main-rent">
-    <div class="available-cars-settings">
+      <div class="available-cars-settings">
         <div class="settings-container">
-            <div class="filter-container">
-                <h4>Filters</h4>
-                <span class="reset-button">Reset</span>
+          <div class="filter-container">
+            <h4>Filters</h4>
+            <span class="reset-button">Reset</span>
+          </div>
+
+          <div class="setting-container" id="carType">
+            <h4>Car Type</h4>
+
+            <div class="setting">
+              <input
+                type="checkbox"
+                name="select-all"
+                id="select-all"
+                class="select-all"
+                checked
+              />
+              <label for="select-all" class="select-all">Select all</label>
             </div>
 
-            <div class="setting-container" id="carType">
-                <h4>Car Type</h4>
-
-                <div class="setting">
-                    <input type="checkbox" name="small" id="small" checked>
-                    <label for="small">Small</label>
-                </div>
-
-                <div class="setting">
-                    <input type="checkbox" name="medium" id="medium" checked>
-                    <label for="medium">Medium</label>
-                </div>
-
-                <div class="setting">
-                    <input type="checkbox" name="large" id="large" checked>
-                    <label for="large">Large</label>
-                </div>
-
-                <div class="setting">
-                    <input type="checkbox" name="suv" id="suv" checked>
-                    <label for="suv">SUV</label>
-                </div>
-
-                <div class="setting">
-                    <input type="checkbox" name="van" id="van" checked>
-                    <label for="van">Van</label>
-                </div>
-
-                <div class="setting">
-                    <input type="checkbox" name="luxury" id="luxury" checked>
-                    <label for="luxury">Luxury</label>
-                </div>
-
+            <div class="setting">
+              <input type="checkbox" name="small" id="small" checked />
+              <label for="small">Small</label>
             </div>
 
-            <div class="setting-container" id="rentingAgency">
-                <h4>Rental agency</h4>
-
-                <div class="setting">
-                    <input type="checkbox" name="alamo" id="alamo" checked>
-                    <label for="alamo">Alamo</label>
-                </div>
-
-                <div class="setting">
-                    <input type="checkbox" name="autonom" id="autonom" checked>
-                    <label for="autonom">Autonom</label>
-                </div>
-
-                <div class="setting">
-                    <input type="checkbox" name="europcar" id="europcar" checked>
-                    <label for="europcar">Europcar</label>
-                </div>
-
-                <div class="setting">
-                    <input type="checkbox" name="klasswagen" id="klasswagen" checked>
-                    <label for="klasswagen">Klass wagen</label>
-                </div>
-
-                <div class="setting">
-                    <input type="checkbox" name="national" id="national" checked>
-                    <label for="national">National</label>
-                </div>
-
-                <div class="setting">
-                    <input type="checkbox" name="payless" id="payless" checked>
-                    <label for="payless">Payless</label>
-                </div>
-
-                <div class="setting">
-                    <input type="checkbox" name="pricecarz" id="pricecarz" checked>
-                    <label for="pricecarz">Pricecarz</label>
-                </div>
-
-                <div class="setting">
-                    <input type="checkbox" name="wheego" id="wheego" checked>
-                    <label for="wheego">Wheego</label>
-                </div>
+            <div class="setting">
+              <input type="checkbox" name="medium" id="medium" checked />
+              <label for="medium">Medium</label>
             </div>
 
-            <div class="setting-container" id="totalPrice">
-                <h4>Total price</h4>
-
-                <div class="setting">
-                    <label for="price">Up to</label>
-                    <input type="number" name="price" id="price" min="70" max="2000">
-                    <input type="range" name="price-range" id="price-range" min="70" max="2000">
-                </div>
+            <div class="setting">
+              <input type="checkbox" name="large" id="large" checked />
+              <label for="large">Large</label>
             </div>
 
-            <div class="setting-container" id="securityDeposit">
-                <h4>Security Deposit</h4>
-
-                <div class="setting">
-                    <input type="radio" name="cardType" id="creditCard" checked>
-                    <label for="creditCard">Credit Card</label>
-                </div>
-
-                <div class="setting">
-                    <input type="radio" name="cardType" id="debitCard">
-                    <label for="debitCard">Debit Card</label>
-                </div>
+            <div class="setting">
+              <input type="checkbox" name="suv" id="suv" checked />
+              <label for="suv">SUV</label>
             </div>
 
-     
+            <div class="setting">
+              <input type="checkbox" name="van" id="van" checked />
+              <label for="van">Van</label>
+            </div>
+
+            <div class="setting">
+              <input type="checkbox" name="luxury" id="luxury" checked />
+              <label for="luxury">Luxury</label>
+            </div>
+          </div>
+
+          <div class="setting-container" id="rentingAgency">
+            <h4>Rental agency</h4>
+
+            <div class="setting">
+              <input
+                type="checkbox"
+                name="select-all"
+                id="select-all"
+                class="select-all"
+                checked
+              />
+              <label for="select-all" class="select-all">Select all</label>
+            </div>
+
+            <div class="setting">
+              <input type="checkbox" name="alamo" id="alamo" checked />
+              <label for="alamo">Alamo</label>
+            </div>
+
+            <div class="setting">
+              <input type="checkbox" name="autonom" id="autonom" checked />
+              <label for="autonom">Autonom</label>
+            </div>
+
+            <div class="setting">
+              <input type="checkbox" name="europcar" id="europcar" checked />
+              <label for="europcar">Europcar</label>
+            </div>
+
+            <div class="setting">
+              <input
+                type="checkbox"
+                name="klasswagen"
+                id="klasswagen"
+                checked
+              />
+              <label for="klasswagen">Klass wagen</label>
+            </div>
+
+            <div class="setting">
+              <input type="checkbox" name="national" id="national" checked />
+              <label for="national">National</label>
+            </div>
+
+            <div class="setting">
+              <input type="checkbox" name="payless" id="payless" checked />
+              <label for="payless">Payless</label>
+            </div>
+
+            <div class="setting">
+              <input type="checkbox" name="pricecarz" id="pricecarz" checked />
+              <label for="pricecarz">Pricecarz</label>
+            </div>
+
+            <div class="setting">
+              <input type="checkbox" name="wheego" id="wheego" checked />
+              <label for="wheego">Wheego</label>
+            </div>
+          </div>
+
+          <div class="setting-container" id="totalPrice">
+            <h4>Total price</h4>
+
+            <div class="setting">
+              <label for="price">Up to</label>
+              <input
+                type="number"
+                name="price"
+                id="price"
+                min="70"
+                max="2000"
+              />
+              <input
+                type="range"
+                name="price-range"
+                id="price-range"
+                min="70"
+                max="2000"
+              />
+            </div>
+          </div>
+
+          <div class="setting-container" id="securityDeposit">
+            <h4>Security Deposit</h4>
+
+            <div class="setting">
+              <input type="radio" name="cardType" id="creditCard" checked />
+              <label for="creditCard">Credit Card</label>
+            </div>
+
+            <div class="setting">
+              <input type="radio" name="cardType" id="debitCard" />
+              <label for="debitCard">Debit Card</label>
+            </div>
+          </div>
         </div>
-        <div class="available-cars"></div>
-    </div>
+        <div class="available-cars">
+        </div>
+      </div>
     </main>
-   
-<script src="script.js"></script>
-</body>
+
+    <script src="script.js"></script>
+  </body>
 </html>
