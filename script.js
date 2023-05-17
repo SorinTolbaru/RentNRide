@@ -31,37 +31,47 @@ $(document).ready(function () {
     $("#price-range").on("mousedown", function () {
         $("#price-range").on("mousemove", function () {
             $("#price").val($("#price-range").val());
+            totalPrice = $("#price").val()
         })
     })
     $("#price").on("change", function () {
         $("#price-range").val($("#price").val())
+        totalPrice = $("#price-range").val()
     })
 
     //select all - setting
     $(".select-all").click(function() {
         const isChecked = $(this).prop("checked");
         $(this).parent().siblings(".setting").find("input").prop("checked", isChecked);
+
       });
 
     //reset settings
     $(".reset-button").click(function(){
         $(`input[type="checkbox"]`).prop("checked",true)
+        getFiltersOptions();
+        applyCarFilter();
+
     })
 
     //get database
     let database;
-    window.location.pathname == "/rent.html" ? $.getJSON("/database/db.json",function(data){setDatabase(data)}) : null;
-    
-    //show all available cars
+    if(window.location.pathname == "/rent.html"){
+        $.getJSON("/database/db.json",function(data){
+            database = data;
+            getFiltersOptions()
+            createHtmlElements(database);
+        }) ;
+    }
+   
+    //show all available cars initialy and after filter
     let cars = [];
-
-    function setDatabase(value){
-        database = value;
-        database.forEach((element, index) => cars[index] = createCar(element,index))
+    function createHtmlElements(db){
+        db.forEach((element, index) => cars[index] = createCarElemet(element,index))
         $(".available-cars").html([...cars])
     };
     
-    function createCar(element,index){
+    function createCarElemet(element,index){
         return(
             `
             <div class="rentableCar" id="car='${index}'">
@@ -72,9 +82,54 @@ $(document).ready(function () {
             </div>
             `
         )
-
     };
 
+    //filter cars
+    function applyCarFilter(){
+        cars = [];
+        resultedCars = database.filter(element => filterCarType.includes(element.car_type) && filterRentAgency.includes(element.rental_agency))
+
+        createHtmlElements(resultedCars)
+        resultedCars = [];  
+    }
+
+    //get all initial filter options
+
+        let filterCarType = [];
+        let filterRentAgency = [];
+        let totalPrice;
+        let securityDeposit;
+        function getFiltersOptions(){ 
+            for(let i = 1; i < $("#carType").children(".setting").length;i++ ){
+                filterCarType.push($($("#carType").children(".setting").find("input")[i]).attr("id"))
+            }
+            for(let i = 1; i < $("#rentingAgency").children(".setting").length;i++ ){
+                filterRentAgency.push($($("#rentingAgency").children(".setting").find("input")[i]).attr("id"))
+            }
+        }
+
+
+    //remove filter based on checked option
+    let resultedCars = [];
+    $(`input:checkbox`).click(function() {
+        if($(this).prop("checked") == false){
+            if($($(this).parent().parent()[0]).attr("id") == "carType"){
+                filterCarType.splice(filterCarType.indexOf($(this).attr("id")),1);
+            }else{
+                filterRentAgency.splice(filterRentAgency.indexOf($(this).attr("id")),1);
+            }
+            applyCarFilter()
+        }else{
+            if($($(this).parent().parent()[0]).attr("id") == "carType"){
+                filterCarType.push($(this).attr("id"));
+            }else{
+                filterRentAgency.push($(this).attr("id"));
+            }
+            applyCarFilter()
+        }
+        
+    });
+    
 
 
 });
