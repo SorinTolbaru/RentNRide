@@ -1,4 +1,5 @@
-[
+{
+  "cars":[
     {
       "carname": "Audi A1",
       "car_type": "small",
@@ -259,5 +260,6 @@
         "car_type": "small",
         "rental_agency": "pricecarz"
     }
+  ]
 
-]
+}

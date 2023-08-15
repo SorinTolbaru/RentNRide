@@ -22,7 +22,7 @@ $(document).ready(function () {
     })
 
     //set form user data on start if available
-    const formElements = [$("#pickL"), $("#dropL"), $("#pickD"), $("#dropD"), $("#pickT"), $("#dropT")];
+    const formElements = [$("#pickL"), $("#dropL"), $("#pickD"), $("#dropD"), $("#pickT"), $("#dropT"),$("#choose-currency")];
     localStorage.getItem("pickL") != null ? formElements.forEach(element => element.val(localStorage.getItem(element.attr("id")))) : null
 
 
@@ -42,7 +42,7 @@ $(document).ready(function () {
     //select all - setting
     $(".select-all").click(function() {
         const isChecked = $(this).prop("checked");
-        $(this).parent().siblings(".setting").find("input").prop("checked", isChecked);
+        $(this).parent().siblings(".setting").find("input").prop("checked", isChecked);     
 
       });
 
@@ -58,7 +58,7 @@ $(document).ready(function () {
     let database;
     if(window.location.pathname == "/rent.html"){
         $.getJSON("/database/db.json",function(data){
-            database = data;
+            database = data.cars;
             getFiltersOptions()
             createHtmlElements(database);
         }) ;
@@ -69,16 +69,17 @@ $(document).ready(function () {
     function createHtmlElements(db){
         db.forEach((element, index) => cars[index] = createCarElemet(element,index))
         $(".available-cars").html([...cars])
+ 
     };
     
     function createCarElemet(element,index){
         return(
             `
             <div class="rentableCar" id="car='${index}'">
-                <div>Car Name: ${element.carname}</div>
-                <div>Car Type: ${element.car_type}</div>
-                <div>Rental Agency: ${element.rental_agency}</div>
-                <button>Select this car</button>
+                <div>Car Name: <br>${element.carname}</div>
+                <div>Car Type: <br>${element.car_type}</div>
+                <div>Rental Agency: <br>${element.rental_agency}</div>
+                <button class="selectCar">Select this car</button>
             </div>
             `
         )
@@ -88,7 +89,6 @@ $(document).ready(function () {
     function applyCarFilter(){
         cars = [];
         resultedCars = database.filter(element => filterCarType.includes(element.car_type) && filterRentAgency.includes(element.rental_agency))
-
         createHtmlElements(resultedCars)
         resultedCars = [];  
     }
@@ -100,12 +100,13 @@ $(document).ready(function () {
         let totalPrice;
         let securityDeposit;
         function getFiltersOptions(){ 
-            for(let i = 1; i < $("#carType").children(".setting").length;i++ ){
-                filterCarType.push($($("#carType").children(".setting").find("input")[i]).attr("id"))
+            for(let i = 1; i < $("#carType").children(".settings").children(".setting").length;i++ ){
+                filterCarType.push($($("#carType").children(".settings").children(".setting").find("input")[i]).attr("id"))
             }
-            for(let i = 1; i < $("#rentingAgency").children(".setting").length;i++ ){
-                filterRentAgency.push($($("#rentingAgency").children(".setting").find("input")[i]).attr("id"))
+            for(let i = 1; i < $("#rentingAgency").children(".settings").children(".setting").length;i++ ){
+                filterRentAgency.push($($("#rentingAgency").children(".settings").children(".setting").find("input")[i]).attr("id"))
             }
+            console.log(filterCarType);
         }
 
 
@@ -130,6 +131,5 @@ $(document).ready(function () {
         
     });
     
-
-
+ 
 });
