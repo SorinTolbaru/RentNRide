@@ -2,263 +2,403 @@
   "cars":[
     {
       "carname": "Audi A1",
+      "card_type":"debit",
       "car_type": "small",
-      "rental_agency": "klass"
+      "rent_price":50,
+      "rental_agency": "klasswagen",
+      "agency_commission":22
     },
     {
       "carname": "BMW X3",
+      "card_type":"debit",
       "car_type": "suv",
-      "rental_agency": "autonom"
+      "rent_price":150,
+      "rental_agency": "autonom",
+      "agency_commission":18
     },
     {
       "carname": "Mercedes-Benz E-Class",
+      "card_type":"debit",
       "car_type": "large",
-      "rental_agency": "national"
+      "rent_price":200,
+      "rental_agency": "national",
+      "agency_commission":16
     },
     {
       "carname": "Tesla Model X",
+      "card_type":"debit",
       "car_type": "suv",
-      "rental_agency": "europcar"
+      "rent_price":150,
+      "rental_agency": "europcar",
+      "agency_commission":15
     },
     {
       "carname": "Volkswagen Transporter",
+      "card_type":"credit",
       "car_type": "van",
-      "rental_agency": "payless"
+      "rent_price":220,
+      "rental_agency": "payless",
+      "agency_commission":5
     },
     {
       "carname": "Ferrari 458 Italia",
+      "card_type":"credit",
       "car_type": "luxury",
-      "rental_agency": "europcar"
+      "rent_price":500,
+      "rental_agency": "europcar",
+      "agency_commission":15
     },
     {
       "carname": "Audi A3",
+      "card_type":"debit",
       "car_type": "small",
-      "rental_agency": "wheego"
+      "rent_price":50,
+      "rental_agency": "wheego",
+      "agency_commission":12
     },
     {
       "carname": "BMW 5 Series",
+      "card_type":"debit",
       "car_type": "medium",
-      "rental_agency": "payless"
+      "rent_price":100,
+      "rental_agency": "payless",
+      "agency_commission":5
     },
     {
       "carname": "Mercedes-Benz S-Class",
+      "card_type":"debit",
       "car_type": "large",
-      "rental_agency": "autonom"
+      "rent_price":200,
+      "rental_agency": "autonom",
+      "agency_commission":18
     },
     {
       "carname": "Tesla Model S",
+      "card_type":"debit",
       "car_type": "suv",
-      "rental_agency": "alamo"
+      "rent_price":150,
+      "rental_agency": "alamo",
+      "agency_commission":20
     },
     {
       "carname": "Volkswagen Golf",
+      "card_type":"debit",
       "car_type": "small",
-      "rental_agency": "pricecarz"
+      "rent_price":50,
+      "rental_agency": "pricecarz",
+      "agency_commission":10
     },
     {
       "carname": "Lamborghini Huracan",
+      "card_type":"credit",
       "car_type": "luxury",
-      "rental_agency": "europcar"
+      "rent_price":500,
+      "rental_agency": "europcar",
+      "agency_commission":15
     },
     {
       "carname": "Audi Q3",
+      "card_type":"debit",
       "car_type": "small",
-      "rental_agency": "pricecarz"
+      "rent_price":50,
+      "rental_agency": "pricecarz",
+      "agency_commission":10
     },
     {
       "carname": "BMW 3 Series",
+      "card_type":"debit",
       "car_type": "medium",
-      "rental_agency": "wheego"
+      "rent_price":100,
+      "rental_agency": "wheego",
+      "agency_commission":12
     },
     {
       "carname": "Mercedes-Benz C-Class",
+      "card_type":"debit",
       "car_type": "large",
-      "rental_agency": "pricecarz"
+      "rent_price":200,
+      "rental_agency": "pricecarz",
+      "agency_commission":10
     },
     {
       "carname": "Tesla Model 3",
+      "card_type":"debit",
       "car_type": "suv",
-      "rental_agency": "national"
+      "rent_price":150,
+      "rental_agency": "national",
+      "agency_commission":16
     },
     {
       "carname": "Volkswagen Tiguan",
+      "card_type":"debit",
       "car_type": "suv",
-      "rental_agency": "autonom"
+      "rent_price":150,
+      "rental_agency": "autonom",
+      "agency_commission":18
     },
     {
       "carname": "Porsche 911",
+      "card_type":"credit",
       "car_type": "luxury",
-      "rental_agency": "payless"
+      "rent_price":500,
+      "rental_agency": "payless",
+      "agency_commission":5
     },
     {
       "carname": "Audi A4",
+      "card_type":"debit",
       "car_type": "small",
-      "rental_agency": "klass"
+      "rent_price":50,
+      "rental_agency": "klasswagen",
+      "agency_commission":22
     },
     {
       "carname": "BMW 7 Series",
+      "card_type":"debit",
       "car_type": "large",
-      "rental_agency": "national"
+      "rent_price":200,
+      "rental_agency": "national",
+      "agency_commission":16
     },
     {
       "carname": "Mercedes-Benz GLE",
+      "card_type":"debit",
       "car_type": "suv",
-      "rental_agency": "wheego"
+      "rent_price":150,
+      "rental_agency": "wheego",
+      "agency_commission":12
     },
     {
         "carname": "Volvo XC40",
-        "car_type": "suv",
-        "rental_agency": "autonom"
+        "card_type":"debit",
+      "car_type": "suv",
+      "rent_price":150,
+        "rental_agency": "autonom",
+      "agency_commission":18
     },
     {
         "carname": "Toyota Camry",
-        "car_type": "medium",
-        "rental_agency": "national"
+        "card_type":"debit",
+      "car_type": "medium",
+      "rent_price":100,
+        "rental_agency": "national",
+      "agency_commission":16
     },
     {
         "carname": "Honda Civic",
-        "car_type": "small",
-        "rental_agency": "klass"
-    },
-    {
-        "carname": "Ford Mustang",
-        "car_type": "Sports",
-        "rental_agency": "payless"
+        "card_type":"debit",
+      "car_type": "small",
+      "rent_price":50,
+        "rental_agency": "klasswagen",
+      "agency_commission":22
     },
     {
         "carname": "Chevrolet Tahoe",
-        "car_type": "suv",
-        "rental_agency": "europcar"
+        "card_type":"debit",
+      "car_type": "suv",
+      "rent_price":150,
+        "rental_agency": "europcar",
+      "agency_commission":15
     },
     {
         "carname": "Nissan Altima",
-        "car_type": "medium",
-        "rental_agency": "wheego"
+        "card_type":"debit",
+      "car_type": "medium",
+      "rent_price":100,
+        "rental_agency": "wheego",
+      "agency_commission":12
     },
     {
         "carname": "Jeep Wrangler",
-        "car_type": "suv",
-        "rental_agency": "pricecarz"
+        "card_type":"debit",
+      "car_type": "suv",
+      "rent_price":150,
+        "rental_agency": "pricecarz",
+      "agency_commission":10
     },
     {
         "carname": "Hyundai Elantra",
-        "car_type": "small",
-        "rental_agency": "alamo"
+        "card_type":"debit",
+      "car_type": "small",
+      "rent_price":50,
+        "rental_agency": "alamo",
+      "agency_commission":20
     },
     {
         "carname": "Kia Sportage",
-        "car_type": "suv",
-        "rental_agency": "national"
+        "card_type":"debit",
+      "car_type": "suv",
+      "rent_price":150,
+        "rental_agency": "national",
+      "agency_commission":16
     },
     {
         "carname": "Mazda CX-5",
-        "car_type": "suv",
-        "rental_agency": "autonom"
+        "card_type":"debit",
+      "car_type": "suv",
+      "rent_price":150,
+        "rental_agency": "autonom",
+      "agency_commission":18
     },
     {
         "carname": "Subaru Outback",
-        "car_type": "suv",
-        "rental_agency": "payless"
+        "card_type":"debit",
+      "car_type": "suv",
+      "rent_price":150,
+        "rental_agency": "payless",
+      "agency_commission":5
     },
     {
         "carname": "Lexus ES",
-        "car_type": "medium",
-        "rental_agency": "europcar"
+        "card_type":"debit",
+      "car_type": "medium",
+      "rent_price":100,
+        "rental_agency": "europcar",
+      "agency_commission":15
     },
     {
         "carname": "Infiniti Q50",
-        "car_type": "medium",
-        "rental_agency": "wheego"
+        "card_type":"debit",
+      "car_type": "medium",
+      "rent_price":100,
+        "rental_agency": "wheego",
+      "agency_commission":12
     },
     {
         "carname": "Acura MDX",
-        "car_type": "suv",
-        "rental_agency": "pricecarz"
+        "card_type":"debit",
+      "car_type": "suv",
+      "rent_price":150,
+        "rental_agency": "pricecarz",
+      "agency_commission":10
     },
     {
         "carname": "GMC Sierra",
-        "car_type": "Truck",
-        "rental_agency": "klass"
+        "card_type":"debit",
+      "car_type": "suv",
+        "rent_price":150,
+        "rental_agency": "klasswagen",
+      "agency_commission":22
     },
     {
         "carname": "Chrysler Pacifica",
-        "car_type": "van",
-        "rental_agency": "national"
+        "card_type":"credit",
+      "car_type": "van",
+      "rent_price":220,
+        "rental_agency": "national",
+      "agency_commission":16
     },
     {
         "carname": "Mercedes-Benz GLC",
-        "car_type": "suv",
-        "rental_agency": "alamo"
-    },
-    {
-        "carname": "BMW i3",
-        "car_type": "Electric",
-        "rental_agency": "autonom"
+        "card_type":"debit",
+      "car_type": "suv",
+      "rent_price":150,
+        "rental_agency": "alamo",
+      "agency_commission":20
     },
     {
         "carname": "Audi Q5",
-        "car_type": "medium",
-        "rental_agency": "europcar"
+        "card_type":"debit",
+      "car_type": "medium",
+      "rent_price":100,
+        "rental_agency": "europcar",
+      "agency_commission":15
     },
     {
         "carname": "Volkswagen Passat",
-        "car_type": "medium",
-        "rental_agency": "payless"
+        "card_type":"debit",
+      "car_type": "medium",
+      "rent_price":100,
+        "rental_agency": "payless",
+      "agency_commission":5
     },
     {
         "carname": "Ford Explorer",
-        "car_type": "suv",
-        "rental_agency": "wheego"
+        "card_type":"debit",
+      "car_type": "suv",
+      "rent_price":150,
+        "rental_agency": "wheego",
+      "agency_commission":12
     },
     {
         "carname": "Toyota Highlander",
-        "car_type": "suv",
-        "rental_agency":"autonom"
+        "card_type":"debit",
+      "car_type": "suv",
+      "rent_price":150,
+        "rental_agency":"autonom",
+      "agency_commission":18
     },
     {
         "carname": "Nissan Rogue",
-        "car_type": "suv",
-        "rental_agency": "pricecarz"
+        "card_type":"debit",
+      "car_type": "suv",
+      "rent_price":150,
+        "rental_agency": "pricecarz",
+      "agency_commission":10
     },
     {
         "carname": "Honda Accord",
-        "car_type": "medium",
-        "rental_agency": "klass"
+        "card_type":"debit",
+      "car_type": "medium",
+      "rent_price":100,
+        "rental_agency": "klasswagen",
+      "agency_commission":22
     },
     {
         "carname": "Chevrolet Cruze",
-        "car_type": "small",
-        "rental_agency": "national"
+        "card_type":"debit",
+      "car_type": "small",
+      "rent_price":50,
+        "rental_agency": "national",
+      "agency_commission":16
     },
     {
         "carname": "Hyundai Tucson",
-        "car_type": "suv",
-        "rental_agency": "alamo"
+        "card_type":"debit",
+      "car_type": "suv",
+      "rent_price":150,
+        "rental_agency": "alamo",
+      "agency_commission":20
     },
     {
         "carname": "Mazda3",
-        "car_type": "small",
-        "rental_agency": "autonom"
+        "card_type":"debit",
+      "car_type": "small",
+      "rent_price":50,
+        "rental_agency": "autonom",
+      "agency_commission":18
     },
     {
         "carname": "Subaru Forester",
-        "car_type": "suv",
-        "rental_agency": "europcar"
+        "card_type":"debit",
+      "car_type": "suv",
+      "rent_price":150,
+        "rental_agency": "europcar",
+      "agency_commission":15
     },
     {
         "carname": "Kia Optima",
-        "car_type": "medium",
-        "rental_agency": "payless"
+        "card_type":"debit",
+      "car_type": "medium",
+      "rent_price":100,
+        "rental_agency": "payless",
+      "agency_commission":5
     },
     {
         "carname": "Ford F-150",
-        "car_type": "Truck",
-        "rental_agency": "wheego"
+        "card_type":"debit",
+      "car_type": "large",
+        "rent_price":200,
+        "rental_agency": "wheego",
+      "agency_commission":12
     },
     {
         "carname": "Toyota Corolla",
-        "car_type": "small",
-        "rental_agency": "pricecarz"
+        "card_type":"debit",
+      "car_type": "small",
+      "rent_price":50,
+        "rental_agency": "pricecarz",
+      "agency_commission":10
     }
   ]
 
