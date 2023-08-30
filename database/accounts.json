@@ -1,0 +1,76 @@
+{
+  "accounts": [
+    {
+      "email": "tolbarusorin@gmail.com",
+      "user": "Sorin",
+      "pass": "sorin23",
+      "status": "admin",
+      "curent_rent": "Boston-Bucharest",
+      "review": "",
+      "id": "TAX5JWrxOzkKLxfpFTXkcWaDOeURDaZc6stnm6HZCWUlogGMNO"
+    },
+    {
+        "email": "markjohn@gmail.com",
+        "user": "Mark John",
+        "pass": "qwertyjohn",
+        "status": "user",
+        "curent_rent": "",
+        "review": "Excellent experience with easy booking, seamless pick-up/drop-off, immaculate vehicle, and great value",
+        "id": "TAX5JWrxOzkKLxfpFTXk847DOeURDaZc6stnm6HZCWUlogGMNO"
+    },
+    {
+        "email": "samuelgreen@gmail.com",
+        "user": "Samuel Green",
+        "pass": "qwertysamuel",
+        "status": "user",
+        "curent_rent": "",
+        "review": "Superb rental experience with immaculate car, professional staff, and excellent value. Highly recommend and will rent again.",
+        "id": "TAX5JWrxOz981xfpFTXkcWaDOeURDaZc6stnm6HZCWUlogGMNO"
+    },
+    {
+        "email": "gracethompson@gmail.com",
+        "user": "Grace Thompson",
+        "pass": "qwertygrace",
+        "status": "user",
+        "curent_rent": "",
+        "review": "Smooth rental process, friendly staff, and a great car at a fair price. I recommend this company.",
+        "id": "TAX5JWrxOzkKLxfpFTXkcWaDOeURDaZc6stnm6HZCWUlogpapa"
+    },
+    {
+        "email": "benjaminyoung@gmail.com",
+        "user": "Benjamin Young",
+        "pass": "qwertybenjamin",
+        "status": "user",
+        "curent_rent": "",
+        "review": "I had an outstanding car rental experience. The booking was easy, the car was clean and comfortable, and the staff was professional and courteous",
+        "id": "TAX5JWrxOzkKLxfpFTXkcWaD1234DaZc6stnm6HZCWUlogGMNO"
+    },
+    {
+        "email": "ameliaparker@gmail.com",
+        "user": "Amelia Parker",
+        "pass": "qwertyamelia",
+        "status": "user",
+        "curent_rent": "",
+        "review": "The rental experience was excellent. The car was in great condition, the staff was friendly and helpful, and the price was fair. Would rent again.",
+        "id": "TAX5JWrxOzkKLxfpFTXkcWaDOeURDaZc6stnm6HZCWUlogG131"
+    },
+    {
+      "email": "test@gmail.com",
+      "user": "Test",
+      "pass": "qwerty123",
+      "status": "user",
+      "curent_rent": "",
+      "review": "",
+      "id": "6q3RvZvMwFfjuoZX2cq5J8kI2D4BRkFEj6dfgijZxgdXLEvudt"
+    },
+    {
+      "email": "ana@gmail.com",
+      "user": "Ana",
+      "pass": "adawdwadaw",
+      "status": "user",
+      "review": "",
+      "curent_rent": "",
+      "id": "wnD7dWIiESixEu27zUGHeqNGgEssvMCSrrxcrWrTcaRVbSghKf"
+    }
+  ]
+}

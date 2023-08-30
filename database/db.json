@@ -25,7 +25,7 @@
       "agency_commission":16
     },
     {
-      "carname": "Tesla Model X",
+      "carname": "Tesla Model-X",
       "card_type":"debit",
       "car_type": "suv",
       "rent_price":150,
@@ -41,7 +41,7 @@
       "agency_commission":5
     },
     {
-      "carname": "Ferrari 458 Italia",
+      "carname": "Mclaren 720s",
       "card_type":"credit",
       "car_type": "luxury",
       "rent_price":500,
@@ -73,7 +73,7 @@
       "agency_commission":18
     },
     {
-      "carname": "Tesla Model S",
+      "carname": "Tesla Model-S",
       "card_type":"debit",
       "car_type": "suv",
       "rent_price":150,
@@ -121,7 +121,7 @@
       "agency_commission":10
     },
     {
-      "carname": "Tesla Model 3",
+      "carname": "Tesla Model-3",
       "card_type":"debit",
       "car_type": "suv",
       "rent_price":150,
@@ -361,7 +361,7 @@
       "agency_commission":20
     },
     {
-        "carname": "Mazda3",
+        "carname": "Mazda 3",
         "card_type":"debit",
       "car_type": "small",
       "rent_price":50,

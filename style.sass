@@ -37,6 +37,31 @@ nav
     background: white
     z-index: 2
 
+#account,.log-out
+    cursor: pointer
+
+.login-form,.register-form
+    width: 60%
+    height: 60%
+    background: red
+    position: fixed
+    left: 50%
+    top: 50%
+    transform: translate(-50%, -50%)
+    background: darkgrey
+    z-index: 10
+    box-shadow: 0 4px 7px 0 rgba(42,46,59,.2)
+
+.account-details
+    padding: 9vh 15% 0% 15%
+
+.account-user,.log-out
+    font-weight: bold
+
+.registerButton,.switchLogin
+    color: red
+    cursor: pointer
+
 .logo-N
     transform: rotate(16deg)
     display: inline-block
@@ -289,12 +314,32 @@ input[type="checkbox"],label
 .selectCar
     cursor: pointer
 
+.selectCarHover
+    box-shadow: 0 4px 7px 0 rgba(42,46,59,.2)
+
 .rentableCar
     display: flex
     justify-content: space-between
     align-items: center
     width: 100%
     padding: 5px
-    height: 100px
+    height: auto
     border: 1px solid lightgrey
     margin: 0px 10px 10px 10px
+
+.selectContainer
+    width: 80%
+    height: 80%
+    position: fixed
+    left: 50%
+    top: 50%
+    transform: translate(-50%, -50%)
+    background: darkgrey
+    z-index: 10
+    box-shadow: 0 4px 7px 0 rgba(42,46,59,.2)
+
+.selectContainerClose,.loginFormClose,.registerFormClose
+    cursor: pointer
+    position: absolute
+    right: 19px
+    top: 10px
