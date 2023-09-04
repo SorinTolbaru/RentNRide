@@ -39,8 +39,25 @@ nav {
   z-index: 2;
 }
 
-#account, .log-out {
+#account, .log-out, .selectCar, #viewRent, #thankYouClose, #addRent, #overwriteRent, #overwriteCancel {
   cursor: pointer;
+}
+
+#loginButton, #registerButton {
+  margin: 2% 0;
+  width: 30%;
+  cursor: pointer;
+  display: grid;
+  align-self: center;
+}
+
+.loginFormMain, .registerFormMain {
+  display: flex;
+  flex-direction: column;
+  padding: 5%;
+}
+.loginFormMain label, .registerFormMain label {
+  margin: 1% 0;
 }
 
 .login-form, .register-form {
@@ -54,6 +71,18 @@ nav {
   background: darkgrey;
   z-index: 10;
   box-shadow: 0 4px 7px 0 rgba(42, 46, 59, 0.2);
+}
+
+#wrongData {
+  display: none;
+  margin-bottom: 2%;
+  text-align: center;
+  color: red;
+  font-weight: bold;
+}
+
+.display {
+  display: block !important;
 }
 
 .account-details {
@@ -96,7 +125,7 @@ nav {
 
 main {
   box-sizing: border-box;
-  padding: 9vh 15% 0% 15%;
+  padding: 9vh 10% 0% 10%;
 }
 
 .main-rent {
@@ -251,6 +280,7 @@ main {
   height: 100%;
   display: flex;
   justify-content: space-between;
+  gap: 10px;
 }
 
 .car {
@@ -258,6 +288,8 @@ main {
   height: 100%;
   border: 1px solid lightgrey;
   border-radius: 5px;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 footer {
@@ -360,10 +392,6 @@ input[type=checkbox], label {
   padding-left: 25%;
 }
 
-.selectCar {
-  cursor: pointer;
-}
-
 .selectCarHover {
   box-shadow: 0 4px 7px 0 rgba(42, 46, 59, 0.2);
 }
@@ -379,7 +407,7 @@ input[type=checkbox], label {
   margin: 0px 10px 10px 10px;
 }
 
-.selectContainer {
+.selectContainer, .currentRentedRidePop, .thankYou, .overwriteRentContainer {
   width: 80%;
   height: 80%;
   position: fixed;
@@ -396,4 +424,29 @@ input[type=checkbox], label {
   position: absolute;
   right: 19px;
   top: 10px;
+}
+
+.thankYou {
+  padding: 0% 10%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 40%;
+  align-items: center;
+}
+
+.currentRentedRide {
+  width: 100%;
+  height: auto;
+  border: 1px solid lightgrey;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.reviewStar {
+  cursor: pointer;
 }/*# sourceMappingURL=style.css.map */

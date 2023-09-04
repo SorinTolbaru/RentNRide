@@ -37,8 +37,22 @@ nav
     background: white
     z-index: 2
 
-#account,.log-out
+#account,.log-out,.selectCar,#viewRent,#thankYouClose,#addRent,#overwriteRent,#overwriteCancel
     cursor: pointer
+
+#loginButton, #registerButton
+    margin: 2% 0
+    width: 30%
+    cursor: pointer
+    display: grid
+    align-self: center
+
+.loginFormMain,.registerFormMain
+    display: flex
+    flex-direction: column
+    padding: 5%  
+    label
+        margin: 1% 0
 
 .login-form,.register-form
     width: 60%
@@ -51,6 +65,16 @@ nav
     background: darkgrey
     z-index: 10
     box-shadow: 0 4px 7px 0 rgba(42,46,59,.2)
+
+#wrongData
+    display: none
+    margin-bottom: 2%
+    text-align: center
+    color: red
+    font-weight: bold
+
+.display
+    display: block !important
 
 .account-details
     padding: 9vh 15% 0% 15%
@@ -87,7 +111,7 @@ nav
 
 main
     box-sizing: border-box
-    padding: 9vh 15% 0% 15%
+    padding: 9vh 10% 0% 10%
 
 .main-rent
     padding: 0 15% !important
@@ -217,12 +241,15 @@ main
     height: 100%
     display: flex
     justify-content: space-between
+    gap:10px 
+    
 
 .car
     width: 33%
     height: 100%
     border: 1px solid lightgrey
     border-radius: 5px
+    object-fit: contain
 
 // footer
 footer
@@ -299,6 +326,8 @@ footer
     justify-content: space-evenly
     border-bottom: 1px solid lightgrey
 
+
+
 .reset-button
     cursor: pointer
     color: red
@@ -311,8 +340,7 @@ input[type="checkbox"],label
     width: 85%
     padding-left: 25%
 
-.selectCar
-    cursor: pointer
+
 
 .selectCarHover
     box-shadow: 0 4px 7px 0 rgba(42,46,59,.2)
@@ -327,7 +355,7 @@ input[type="checkbox"],label
     border: 1px solid lightgrey
     margin: 0px 10px 10px 10px
 
-.selectContainer
+.selectContainer,.currentRentedRidePop,.thankYou,.overwriteRentContainer
     width: 80%
     height: 80%
     position: fixed
@@ -343,3 +371,26 @@ input[type="checkbox"],label
     position: absolute
     right: 19px
     top: 10px
+
+.thankYou
+    padding: 0% 10%
+    box-sizing: border-box
+    display: flex
+    flex-direction: column
+    justify-content: center
+    height: 40%
+    align-items: center
+//account
+.currentRentedRide
+    width: 100%
+    height: auto
+    border: 1px solid lightgrey
+    display: flex
+    justify-content: space-around
+    align-items: center
+    padding: 5px
+    cursor: pointer
+
+.reviewStar
+    cursor: pointer
+        
