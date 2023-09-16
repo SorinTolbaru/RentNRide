@@ -9,28 +9,54 @@
       integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
       crossorigin="anonymous"
     ></script>
+    <link href="https://fonts.cdnfonts.com/css/lato" rel="stylesheet">
     <link rel="icon" href="./imgs/ico.png" type="image/icon type" />
     <link rel="stylesheet" href="style.css" />
     <title>RentNRide|Renting</title>
   </head>
 
-  <body>
+  <body style="overflow: hidden;">
     <nav>
-      <div class="logo">
-        <a href="index.html">Rent<span class="logo-N">N</span><u>Ride</u></a>
-      </div>
-      <div class="nav-elements">
-        <select name="currency" id="choose-currency">
-          <option value="USD">USD</option>
-          <option value="EURO">EURO</option>
-          <option value="Lei">Lei</option>
-        </select>
-        <button id="account">Log in</button>
-      </div>
+        <div class="logo"><a href="index.html">Rent<span class="logo-N">N</span><u>Ride</u></a> </div>
+        <div class="nav-elements">
+            <a href="/index.html">Home</a>
+            <select name="currency" id="choose-currency">
+                <option value="USD">USD</option>
+                <option value="EURO">EURO</option>
+                <option value="Lei">Lei</option>
+            </select>
+            <div class="user-container">
+                <button id="account">Log in</button>
+            </div>
+       
+        </div>        
+        <div class="hamburger-mobile-container">
+            <select name="currency" id="choose-currency">
+                <option value="USD">USD</option>
+                <option value="EURO">EURO</option>
+                <option value="Lei">Lei</option>
+            </select>
+            <button class="hamburger-mobile">
+                <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 18L20 18" stroke="#000000" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M4 12L20 12" stroke="#000000" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M4 6L20 6" stroke="#000000" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+            </button>
+        </div>
     </nav>
 
+    <div class="nav-elements-mobile">
+        <a href="/index.html">Home</a>
+        <div class="user-container-mobile">
+            <button id="account-mobile">Log in</button>
+
+        </div>
+    </div>
+
     <form method="post" class="rent-page">
-      <div class="pick-drop-location">
+      <div><strong>From:</strong></div>
+      <div class="pick-drop-location --pick-drop-width">
         <select name="pick-location" id="pickL">
           <option value="Berlin">Berlin</option>
           <option value="Munich">Munich</option>
@@ -66,25 +92,33 @@
           <option value="Plovdiv">Plovdiv</option>
         </select>
       </div>
-      <div class="pick-drop-date">
+      <div><strong>On:</strong></div>
+      <div class="pick-drop-date --pick-drop-width">
         <input type="date" name="pick-date" id="pickD" />
         <input type="date" name="drop-date" id="dropD" />
+
+      </div>
+      <div><strong>At:</strong></div>
+      <div class="pick-drop-time --pick-drop-width">
         <input type="time" name="pick-time" id="pickT" value="10:00" />
         <input type="time" name="drop-time" id="dropT" value="10:00" />
       </div>
-      <input type="submit" value="Find a car" id="submit" />
+      <input type="submit" value="Find a car" id="submitRent" />
     </form>
+
+    <button class="show-filters">Show Filters</button>
+    <button class="show-date">Change Date</button>
 
     <main class="main-rent">
       <div class="available-cars-settings">
         <div class="settings-container">
-          <div class="filter-container">
-            <h4>Filters</h4>
+          <fieldset class="filter-container">
+            <legend>Filters</legend>
             <span class="reset-button">Reset</span>
-          </div>
+          </fieldset>
 
-          <div class="setting-container" id="carType">
-            <h4>Car Type</h4>
+          <fieldset class="setting-container" id="carType">
+            <legend>Car Type</legend>
             <div class="settings">
               <div class="setting">
                 <input
@@ -98,40 +132,40 @@
               </div>
   
               <div class="setting">
-                <input type="checkbox" name="small" id="small" checked />
-                <label for="small">Small</label>
+                <input type="checkbox" name="Small" id="Small" checked />
+                <label for="Small">Small</label>
               </div>
   
               <div class="setting">
-                <input type="checkbox" name="medium" id="medium" checked />
-                <label for="medium">Medium</label>
+                <input type="checkbox" name="Medium" id="Medium" checked />
+                <label for="Medium">Medium</label>
               </div>
   
               <div class="setting">
-                <input type="checkbox" name="large" id="large" checked />
-                <label for="large">Large</label>
+                <input type="checkbox" name="Large" id="Large" checked />
+                <label for="Large">Large</label>
               </div>
   
               <div class="setting">
-                <input type="checkbox" name="suv" id="suv" checked />
-                <label for="suv">SUV</label>
+                <input type="checkbox" name="SUV" id="SUV" checked />
+                <label for="SUV">SUV</label>
               </div>
   
               <div class="setting">
-                <input type="checkbox" name="van" id="van" checked />
-                <label for="van">Van</label>
+                <input type="checkbox" name="Van" id="Van" checked />
+                <label for="Van">Van</label>
               </div>
   
               <div class="setting">
-                <input type="checkbox" name="luxury" id="luxury" checked />
-                <label for="luxury">Luxury</label>
+                <input type="checkbox" name="Luxury" id="Luxury" checked />
+                <label for="Luxury">Luxury</label>
               </div>
             </div>
             
-          </div>
+          </fieldset>
 
-          <div class="setting-container" id="rentingAgency">
-            <h4>Rental agency</h4>
+          <fieldset class="setting-container" id="rentingAgency">
+            <legend>Rental agency</legend>
             <div class="settings">
               <div class="setting">
                 <input
@@ -145,55 +179,55 @@
               </div>
   
               <div class="setting">
-                <input type="checkbox" name="alamo" id="alamo" checked />
-                <label for="alamo">Alamo</label>
+                <input type="checkbox" name="Alamo" id="Alamo" checked />
+                <label for="Alamo">Alamo</label>
               </div>
   
               <div class="setting">
-                <input type="checkbox" name="autonom" id="autonom" checked />
-                <label for="autonom">Autonom</label>
+                <input type="checkbox" name="Autonom" id="Autonom" checked />
+                <label for="Autonom">Autonom</label>
               </div>
   
               <div class="setting">
-                <input type="checkbox" name="europcar" id="europcar" checked />
-                <label for="europcar">Europcar</label>
+                <input type="checkbox" name="Europcar" id="Europcar" checked />
+                <label for="Europcar">Europcar</label>
               </div>
   
               <div class="setting">
                 <input
                   type="checkbox"
-                  name="klasswagen"
-                  id="klasswagen"
+                  name="Klasswagen"
+                  id="Klasswagen"
                   checked
                 />
-                <label for="klasswagen">Klass wagen</label>
+                <label for="Klasswagen">Klass wagen</label>
               </div>
   
               <div class="setting">
-                <input type="checkbox" name="national" id="national" checked />
-                <label for="national">National</label>
+                <input type="checkbox" name="National" id="National" checked />
+                <label for="National">National</label>
               </div>
   
               <div class="setting">
-                <input type="checkbox" name="payless" id="payless" checked />
-                <label for="payless">Payless</label>
+                <input type="checkbox" name="Payless" id="Payless" checked />
+                <label for="Payless">Payless</label>
               </div>
   
               <div class="setting">
-                <input type="checkbox" name="pricecarz" id="pricecarz" checked />
-                <label for="pricecarz">Pricecarz</label>
+                <input type="checkbox" name="Pricecarz" id="Pricecarz" checked />
+                <label for="Pricecarz">Pricecarz</label>
               </div>
   
               <div class="setting">
-                <input type="checkbox" name="wheego" id="wheego" checked />
-                <label for="wheego">Wheego</label>
+                <input type="checkbox" name="Whego" id="Whego" checked />
+                <label for="Whego">Whego</label>
               </div>
             </div>
             
-          </div>
+          </fieldset>
 
-          <div class="setting-container" id="totalPrice">
-            <h4>Total price</h4>
+          <fieldset class="setting-container" id="totalPrice">
+            <legend>Total price</legend>
             <div class="settings">
               <div class="setting">
                 <label for="price">Up to</label>
@@ -214,25 +248,26 @@
               </div>
             </div>
             
-          </div>
+          </fieldset>
 
-          <div class="setting-container" id="securityDeposit">
-            <h4>Security Deposit</h4>
+          <fieldset class="setting-container" id="securityDeposit">
+            <legend>Security Deposit</legend>
             <div class="settings">
               <div class="setting">
-                <input type="checkbox" name="cardType" id="credit" checked />
-                <label for="credit">Credit Card</label>
+                <input type="checkbox" name="cardType" id="Credit" checked />
+                <label for="Credit">Credit Card</label>
               </div>
   
               <div class="setting">
-                <input type="checkbox" name="cardType" id="debit" checked />
-                <label for="debit">Debit Card</label>
+                <input type="checkbox" name="cardType" id="Debit" checked />
+                <label for="Debit">Debit Card</label>
               </div>
             </div>
             
-          </div>
+          </fieldset>
         </div>
         <div class="available-cars">
+          
         </div>
       </div>
     </main>

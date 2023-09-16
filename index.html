@@ -8,6 +8,7 @@
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"
         integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.cdnfonts.com/css/lato" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
     <link rel="icon" href="./imgs/ico.png" type="image/icon type">
     <title>RentNRide</title>
@@ -26,55 +27,105 @@
                 <option value="EURO">EURO</option>
                 <option value="Lei">Lei</option>
             </select>
-            <button id="account">Log in</button>
+            <div class="user-container">
+                <button id="account">Log in</button>
+            </div>
+       
+        </div>        
+        <div class="hamburger-mobile-container">
+            <select name="currency" id="choose-currency">
+                <option value="USD">USD</option>
+                <option value="EURO">EURO</option>
+                <option value="Lei">Lei</option>
+            </select>
+            <button class="hamburger-mobile">
+                <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 18L20 18" stroke="#000000" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M4 12L20 12" stroke="#000000" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M4 6L20 6" stroke="#000000" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+            </button>
         </div>
-
     </nav>
+    <div class="nav-elements-mobile">
+        <a href="#">Home</a>
+        <a href="#faq">FAQ</a>
+        <a href="#rev">Reviews</a>
+        <div class="user-container-mobile">
+            <button id="account-mobile">Log in</button>
+
+        </div>
+    </div>
     <main>
         <form method="post" class="rent-form">
             <h2>Save up to 50% on car rental</h2>
             <h1>Hit the Road</h1>
             <div class="pick-drop-location">
-                <select name="pick-location" id="pickL">
-                    <option value="Berlin">Berlin</option>
-                    <option value="Munich">Munich</option>
-                    <option value="Hamburg">Hamburg</option>
-                    <option value="Bucharest">Bucharest</option>
-                    <option value="Cluj">Cluj</option>
-                    <option value="Timisoara">Timisoara</option>
-                    <option value="Rome">Rome</option>
-                    <option value="Milan">Milan</option>
-                    <option value="Venice">Venice</option>
-                    <option value="Paris">Paris</option>
-                    <option value="Marseille">Marseille</option>
-                    <option value="Lyon">Lyon</option>
-                    <option value="Sofia">Sofia</option>
-                    <option value="Varna">Varna</option>
-                    <option value="Plovdiv">Plovdiv</option>
-                </select>
-                <select name="drop-location" id="dropL">
-                    <option value="Berlin">Berlin</option>
-                    <option value="Munich">Munich</option>
-                    <option value="Hamburg">Hamburg</option>
-                    <option value="Bucharest">Bucharest</option>
-                    <option value="Cluj">Cluj</option>
-                    <option value="Timisoara">Timisoara</option>
-                    <option value="Rome">Rome</option>
-                    <option value="Milan">Milan</option>
-                    <option value="Venice">Venice</option>
-                    <option value="Paris">Paris</option>
-                    <option value="Marseille">Marseille</option>
-                    <option value="Lyon">Lyon</option>
-                    <option value="Sofia">Sofia</option>
-                    <option value="Varna">Varna</option>
-                    <option value="Plovdiv">Plovdiv</option>
-                </select>
+                <div class="pick-container">
+                    <label for="pickL">Pick Up Location</label>
+                    <select name="pick-location" id="pickL">
+                        <option value="Berlin">Berlin</option>
+                        <option value="Munich">Munich</option>
+                        <option value="Hamburg">Hamburg</option>
+                        <option value="Bucharest">Bucharest</option>
+                        <option value="Cluj">Cluj</option>
+                        <option value="Timisoara">Timisoara</option>
+                        <option value="Rome">Rome</option>
+                        <option value="Milan">Milan</option>
+                        <option value="Venice">Venice</option>
+                        <option value="Paris">Paris</option>
+                        <option value="Marseille">Marseille</option>
+                        <option value="Lyon">Lyon</option>
+                        <option value="Sofia">Sofia</option>
+                        <option value="Varna">Varna</option>
+                        <option value="Plovdiv">Plovdiv</option>
+                    </select>
+                </div>
+                <div class="drop-container">
+                    <label for="pickL">Drop Location</label>
+                    <select name="drop-location" id="dropL">
+                        <option value="Berlin">Berlin</option>
+                        <option value="Munich">Munich</option>
+                        <option value="Hamburg">Hamburg</option>
+                        <option value="Bucharest">Bucharest</option>
+                        <option value="Cluj">Cluj</option>
+                        <option value="Timisoara">Timisoara</option>
+                        <option value="Rome">Rome</option>
+                        <option value="Milan">Milan</option>
+                        <option value="Venice">Venice</option>
+                        <option value="Paris">Paris</option>
+                        <option value="Marseille">Marseille</option>
+                        <option value="Lyon">Lyon</option>
+                        <option value="Sofia">Sofia</option>
+                        <option value="Varna">Varna</option>
+                        <option value="Plovdiv">Plovdiv</option>
+                    </select>
+                </div>
+
             </div>
             <div class="pick-drop-date">
-                <input type="date" name="pick-date" id="pickD">
-                <input type="date" name="drop-date" id="dropD">
-                <input type="time" name="pick-time" id="pickT" >
-                <input type="time" name="drop-time" id="dropT" >
+                <div class="date-container">
+                    <div class="pick-date-container">
+                        <label for="pickD">Pick Date</label>
+                        <input type="date" name="pick-date" id="pickD">
+                    </div>
+                    <div class="drop-date-container">
+                        <label for="dropD">Drop Date</label>
+                        <input type="date" name="drop-date" id="dropD">
+                    </div>
+                </div>
+                    <div class="time-container">
+                <div class="pick-time-container">
+                    <label for="pickT">Pick Time</label>
+                    <input type="time" name="pick-time" id="pickT" >
+                </div>
+                <div class="drop-time-container">
+                    <label for="dropT">Drop Date</label>
+                    <input type="time" name="drop-time" id="dropT" >
+                </div>
+                    </div>
+
+
             </div>
             <input type="submit" value="Find a Car" id="submit">
         </form>
@@ -244,14 +295,16 @@
         <div class="reviews" id="rev">
             <h1>Whats our customers say</h1>
             <div class="swiper mySwiper">
-                <div class="swiper-wrapper">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
 
 
 
+                    </div>
                 </div>
                 <div class="swiper-button-next"></div>
                 <div class="swiper-button-prev"></div>
-            </div>
+        </div>
         </div>
     </main>
     <footer>
@@ -278,13 +331,27 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 
     <script>
-        var swiper = new Swiper(".mySwiper", {
+        var swiper = new Swiper(".swiper-container", {
             slidesPerView: 3,
             spaceBetween: 20,
             navigation: {
                 nextEl: ".swiper-button-next",
                 prevEl: ".swiper-button-prev",
             },
+        breakpoints: {
+          1: {
+            slidesPerView: 1,
+            spaceBetween: 20,
+          },
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 20,
+          }
+        }
         });
     </script>
 </body>

@@ -8,26 +8,52 @@
     integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
     crossorigin="anonymous"
   ></script>
+  <link href="https://fonts.cdnfonts.com/css/lato" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="icon" href="./imgs/ico.png" type="image/icon type" />
   <link rel="stylesheet" href="style.css" />
     <title>RentNRide|Account</title>
 </head>
 <body>
-    <nav>
-        <div class="logo">
-          <a href="index.html">Rent<span class="logo-N">N</span><u>Ride</u></a>
-        </div>
-        <div class="nav-elements">
-          <a href="/rent.html">Rent</a>
-          <select name="currency" id="choose-currency">
+  <nav>
+    <div class="logo"><a href="index.html">Rent<span class="logo-N">N</span><u>Ride</u></a> </div>
+    <div class="nav-elements">
+        <a href="/index.html">Home</a>
+        <a href="/rent.html">Rent</a>
+        <select name="currency" id="choose-currency">
             <option value="USD">USD</option>
             <option value="EURO">EURO</option>
             <option value="Lei">Lei</option>
-          </select>
-          <button id="account">Log in</button>
+        </select>
+        <div class="user-container">
+            <button id="account">Log in</button>
         </div>
-      </nav>
+   
+    </div>        
+    <div class="hamburger-mobile-container">
+        <select name="currency" id="choose-currency">
+            <option value="USD">USD</option>
+            <option value="EURO">EURO</option>
+            <option value="Lei">Lei</option>
+        </select>
+        <button class="hamburger-mobile">
+            <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 18L20 18" stroke="#000000" stroke-width="2" stroke-linecap="round"/>
+                <path d="M4 12L20 12" stroke="#000000" stroke-width="2" stroke-linecap="round"/>
+                <path d="M4 6L20 6" stroke="#000000" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+        </button>
+    </div>
+</nav>
+
+<div class="nav-elements-mobile">
+  <a href="/index.html">Home</a>
+  <a href="/rent.html">Rent</a>
+    <div class="user-container-mobile">
+        <button id="account-mobile">Log in</button>
+
+    </div>
+</div>
       <div class="account-details">
         <div class="current-rent">
             <div class="current-rent-title"><strong>Current Rent</strong></div>

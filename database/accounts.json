@@ -5,15 +5,15 @@
       "user": "Sorin",
       "pass": "sorin23",
       "status": "admin",
-      "times_rented": 1,
+      "times_rented": 2,
       "curent_rent": {
-        "car_name": null,
-        "pick_location": null,
-        "drop_location": null,
-        "pick_date": null,
-        "drop_date": null,
-        "pick_time": null,
-        "drop_time": null
+        "car_name": "Audi A1",
+        "pick_location": "Berlin",
+        "drop_location": "Bucharest",
+        "pick_date": "2023-09-07",
+        "drop_date": "2023-09-08",
+        "pick_time": "20:56",
+        "drop_time": "18:00"
       },
       "review": {
         "comment": "",

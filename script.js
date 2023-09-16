@@ -4,10 +4,29 @@ $(document).ready(function () {
         fetch(`https://maps.googleapis.com/maps/api/distancematrix/json?destinations=${localStorage.getItem("dropL")}&origins=${localStorage.getItem("pickL")}&units=metric&key=AIzaSyBgG2ZFnmUnevD6YNPtwczEiJXf_8Uqtmw`).then((resp)=>{
            resp.json().then((l)=>distance = Math.round(l.rows[0].elements[0].distance.value / 1000));
          })
-    
+
+    //mobile menu
+    $(".hamburger-mobile").click(function(){
+        $(".nav-elements-mobile").toggleClass("display-flex")
+        
+    })
+
+    //show filters date on mobile
+    $(".show-filters").click(function(){
+        $(".settings-container").toggleClass("display-flex")
+        $(".show-filters,.show-date").toggleClass("--move-filter-button")
+        $(".settings-container").hasClass("display-flex") ? $(this).text("Close filters") : $(this).text("Show filters")
+    })
+
+    $(".show-date").click(function(){
+        $(".rent-page").toggleClass("display-flex")
+        $(".rent-page").hasClass("display-flex") ? $(this).text("Close Date") : $(this).text("Change Date")
+    })
+
 
     //check login/register
     function accountCheck(){
+
         if(database.find(e=>e.id == session_ID) && session_ID != null){
             window.location.href = "account.html" 
         }else{
@@ -74,24 +93,33 @@ $(document).ready(function () {
 
         }
     }
+
     //account button
-    $("#account").click(accountCheck)
+    $("#account,#account-mobile").click(accountCheck)
   
     //login form
     function loginForm(){
         return(
             `
             <form class="login-form">
-                <div class="loginFormClose">X</div>
+                <div class="loginFormClose"><svg fill="#000000" height="0.8rem" width="0.8rem" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+                viewBox="0 0 460.775 460.775" xml:space="preserve">
+           <path d="M285.08,230.397L456.218,59.27c6.076-6.077,6.076-15.911,0-21.986L423.511,4.565c-2.913-2.911-6.866-4.55-10.992-4.55
+               c-4.127,0-8.08,1.639-10.993,4.55l-171.138,171.14L59.25,4.565c-2.913-2.911-6.866-4.55-10.993-4.55
+               c-4.126,0-8.08,1.639-10.992,4.55L4.558,37.284c-6.077,6.075-6.077,15.909,0,21.986l171.138,171.128L4.575,401.505
+               c-6.074,6.077-6.074,15.911,0,21.986l32.709,32.719c2.911,2.911,6.865,4.55,10.992,4.55c4.127,0,8.08-1.639,10.994-4.55
+               l171.117-171.12l171.118,171.12c2.913,2.911,6.866,4.55,10.993,4.55c4.128,0,8.081-1.639,10.992-4.55l32.709-32.719
+               c6.074-6.075,6.074-15.909,0-21.986L285.08,230.397z"/>
+           </svg></div>
                 <div class="loginFormMain">
                     <h2>Login</h2>
                     <div id="wrongData">Wrong Email or Password</div>
                     <label for="loginEmail">Email</label>
-                    <input type="email" id="loginEmail">
+                    <input type="email" id="loginEmail" required>
                     <label for="loginPassword">Password</label>
-                    <input type="password" id="loginPassword">
+                    <input type="password" id="loginPassword" required>
                     <input type="submit" value="Login" id="loginButton">
-                    <div>Need an account?<span class="registerButton">Register</span></div>
+                    <div>Need an account? <span class="registerButton">Register</span></div>
                 </div>
             </form>
             `
@@ -102,18 +130,26 @@ $(document).ready(function () {
         return(
             `
             <form class="register-form">
-                <div class="registerFormClose">X</div>
+                <div class="registerFormClose"><svg fill="#000000" height="0.8rem" width="0.8rem" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+                viewBox="0 0 460.775 460.775" xml:space="preserve">
+           <path d="M285.08,230.397L456.218,59.27c6.076-6.077,6.076-15.911,0-21.986L423.511,4.565c-2.913-2.911-6.866-4.55-10.992-4.55
+               c-4.127,0-8.08,1.639-10.993,4.55l-171.138,171.14L59.25,4.565c-2.913-2.911-6.866-4.55-10.993-4.55
+               c-4.126,0-8.08,1.639-10.992,4.55L4.558,37.284c-6.077,6.075-6.077,15.909,0,21.986l171.138,171.128L4.575,401.505
+               c-6.074,6.077-6.074,15.911,0,21.986l32.709,32.719c2.911,2.911,6.865,4.55,10.992,4.55c4.127,0,8.08-1.639,10.994-4.55
+               l171.117-171.12l171.118,171.12c2.913,2.911,6.866,4.55,10.993,4.55c4.128,0,8.081-1.639,10.992-4.55l32.709-32.719
+               c6.074-6.075,6.074-15.909,0-21.986L285.08,230.397z"/>
+           </svg></div>
                 <div class="registerFormMain">
                     <h2>Register</h2>
                     <div id="wrongData">Email already in use</div>
                     <label for="registerUser">User Name</label>
-                    <input type="text" id="registerUser">
+                    <input type="text" id="registerUser" required>
                     <label for="registerEmail">Email</label>
-                    <input type="email" id="registerEmail">
+                    <input type="email" id="registerEmail" required>
                     <label for="registerPassword">Password</label>
-                    <input type="password" id="registerPassword">
+                    <input type="password" id="registerPassword" required>
                     <input type="submit" value="Register" id="registerButton">
-                    <div>Already have an account?<span class="switchLogin">Login</span></div>
+                    <div>Already have an account? <span class="switchLogin">Login</span></div>
                 </div>
             </form>
             `
@@ -139,7 +175,7 @@ $(document).ready(function () {
 
     //faq menu
     $(".question").click(function () {
-        $(this).children(".q-answer").toggle()
+        $(this).children(".q-answer").toggleClass("show-answer")
         $(this).children("h4").children(".arrow-show").toggleClass("rotate-arrow")
     })
 
@@ -229,10 +265,10 @@ $(document).ready(function () {
             
         }
         if(foundUser && session_ID != null){
-            $("#account").html(`<div class="account-user">${foundUser.user}<div>`)
+            $("#account,#account-mobile").html(`<div class="account-user">${foundUser.user}<div>`)
 
             //logout button
-            $(".nav-elements").append(`<button class="log-out">Log out</button>`)
+            $(".user-container,.user-container-mobile").append(`<button class="log-out">Log out</button>`)
             $(".log-out").click(function(){
                 localStorage.removeItem("session_ID");
                 window.location.reload()
@@ -241,28 +277,44 @@ $(document).ready(function () {
             if(window.location.pathname == "/account.html"){
                 foundUser.curent_rent.car_name != null ? $(".current-rent").append(
                     `<div class="currentRentedRide">
-                        <img src="https://cdn.imagin.studio/getImage?&customer=img&make=${foundUser.curent_rent.car_name.split(" ")[0]}&modelFamily=${foundUser.curent_rent.car_name.split(" ")[1]}&zoomlevel=100" alt="Car Image" width="30%">
-                        <div>Car:${foundUser.curent_rent.car_name}</div>
-                        <div> Pick Location:${foundUser.curent_rent.pick_location}</div>
-                        <div> Drop Location:${foundUser.curent_rent.drop_location}</div>
+                        <div class="img-car">
+                        <img src="https://cdn.imagin.studio/getImage?&customer=img&make=${foundUser.curent_rent.car_name.split(" ")[0]}&modelFamily=${foundUser.curent_rent.car_name.split(" ")[1]}&zoomlevel=100" alt="Car Image" height="80%">
+                       <div style="height:20%"> ${foundUser.curent_rent.car_name}</div>
+                        </div>
+                        <div><strong>Pick Location</strong>: ${foundUser.curent_rent.pick_location}</div>
+                        <div><strong>Drop Location</strong>: ${foundUser.curent_rent.drop_location}</div>
                     </div>`
                     ) :
-                $(".current-rent").append(`<div class="currentRentedRide" style="justify-content: center;">No rented car<div>`);
+                $(".current-rent").append(`<div class="currentRentedRideNone" style="justify-content: center;">No rented car<div>`);
                 $(".currentRentedRide").click(()=>{
                     if(foundUser.curent_rent.car_name != null){
                     $("body").append(
                         `<div class="currentRentedRidePop">
-                        <div class="selectContainerClose">X</div>
-                        <img src="https://cdn.imagin.studio/getImage?&customer=img&make=${foundUser.curent_rent.car_name.split(" ")[0]}&modelFamily=${foundUser.curent_rent.car_name.split(" ")[1]}&zoomlevel=100" alt="Car Image" width="30%">
-                        <div>Car:${foundUser.curent_rent.car_name}</div>
-                        <div> Pick Location:${foundUser.curent_rent.pick_location}</div>
-                        <div> Drop Location:${foundUser.curent_rent.drop_location}</div>
-                        <div> Pick date:${foundUser.curent_rent.pick_date}</div>
-                        <div> Drop date:${foundUser.curent_rent.drop_date}</div>
-                        <div> Pick time:${foundUser.curent_rent.pick_time}</div>
-                        <div> Drop time:${foundUser.curent_rent.drop_time}</div>
+                        <div class="selectContainerClose"><svg fill="#000000" height="0.8rem" width="0.8rem" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+                        viewBox="0 0 460.775 460.775" xml:space="preserve">
+                   <path d="M285.08,230.397L456.218,59.27c6.076-6.077,6.076-15.911,0-21.986L423.511,4.565c-2.913-2.911-6.866-4.55-10.992-4.55
+                       c-4.127,0-8.08,1.639-10.993,4.55l-171.138,171.14L59.25,4.565c-2.913-2.911-6.866-4.55-10.993-4.55
+                       c-4.126,0-8.08,1.639-10.992,4.55L4.558,37.284c-6.077,6.075-6.077,15.909,0,21.986l171.138,171.128L4.575,401.505
+                       c-6.074,6.077-6.074,15.911,0,21.986l32.709,32.719c2.911,2.911,6.865,4.55,10.992,4.55c4.127,0,8.08-1.639,10.994-4.55
+                       l171.117-171.12l171.118,171.12c2.913,2.911,6.866,4.55,10.993,4.55c4.128,0,8.081-1.639,10.992-4.55l32.709-32.719
+                       c6.074-6.075,6.074-15.909,0-21.986L285.08,230.397z"/>
+                   </svg></div>
+                    <div class="rent-details-container">
+                        <img src="https://cdn.imagin.studio/getImage?&customer=img&make=${foundUser.curent_rent.car_name.split(" ")[0]}&modelFamily=${foundUser.curent_rent.car_name.split(" ")[1]}&zoomlevel=100" alt="Car Image" width="50%" style="margin: auto;height: fit-content;">
+                        <div class="rent-details">
+                        <div><strong>Car</strong>: ${foundUser.curent_rent.car_name}</div>
+                        <div><strong>Pick Location</strong>: ${foundUser.curent_rent.pick_location}</div>
+                        <div> <strong>Drop Location</strong>: ${foundUser.curent_rent.drop_location}</div>
+                        <div> <strong>Pick date</strong>: ${foundUser.curent_rent.pick_date}</div>
+                        <div><strong>Drop date</strong>: ${foundUser.curent_rent.drop_date}</div>
+                        <div><strong>Pick time</strong>: ${foundUser.curent_rent.pick_time}</div>
+                        <div> <strong>Drop time</strong>: ${foundUser.curent_rent.drop_time}</div>
+                        </div>
+                    </div>
+                    <div class="rent-options">
                         <button id="askReview">Finish Ride</button>
                         <button id="cancelRide">Cancel Ride</button>
+                    </div>
                     </div>`
                 
                     )}
@@ -333,7 +385,7 @@ $(document).ready(function () {
                             $("#cancelRent").click(function(){
                                 modifyRide(foundUser,0)
                             }),
-                            $("#Cancel").click(function(){
+                            $("#overwriteCancel").click(function(){
                                 $(this).parent().parent()[0].remove()
                             })
                     })
@@ -343,6 +395,12 @@ $(document).ready(function () {
                         $($(this).parent()[0]).remove();
             })
                 })   
+        //scale effect
+        $(".currentRentedRide").on("mousedown",()=>{
+            $(".currentRentedRide").css("scale", "0.9")
+            $(".currentRentedRide").on("mouseup mouseleave mousedrag",()=>{$(".currentRentedRide").css("scale", "1")})
+    
+        })
             }
         }
             }) ;
@@ -410,7 +468,7 @@ $(document).ready(function () {
     function createWanted(element){
         return(
             `
-            <img class="car" src="https://cdn.imagin.studio/getImage?&customer=img&make=${element.carname.split(" ")[0]}&modelFamily=${element.carname.split(" ")[1]}&zoomlevel=100" alt="Car Image" width="30%">
+            <img class="car" src="https://cdn.imagin.studio/getImage?&customer=img&make=${element.carname.split(" ")[0]}&modelFamily=${element.carname.split(" ")[1]}&zoomlevel=100" alt="Car Image">
             `
         )
     }
@@ -517,18 +575,32 @@ $(document).ready(function () {
         return(
             `
             <form class="selectContainer">
-            <div class="selectContainerClose">X</div>
-            <img src="https://cdn.imagin.studio/getImage?&customer=img&make=${db[dataId].carname.split(" ")[0]}&modelFamily=${db[dataId].carname.split(" ")[1]}&zoomlevel=100" alt="Car Image" width="30%">
-                <div><strong>Car name</strong>:${db[dataId].carname}</div>
-                <div><strong>Car Type</strong>:${db[dataId].car_type}</div>
-                <div><strong>Rental Agency</strong>:${db[dataId].rental_agency}</div>
-                <div><strong>Card Type</strong>:${db[dataId].card_type}</div>
-                <div><strong>Starting Price</strong>:<span style="color:red">${Math.floor(db[dataId].rent_price * convertedCurrency * db[dataId].agency_commission / 100) }</span> ${selectedCurrency}</div>
+            <div class="selectContainerClose"><svg fill="#000000" height="0.8rem" width="0.8rem" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+            viewBox="0 0 460.775 460.775" xml:space="preserve">
+       <path d="M285.08,230.397L456.218,59.27c6.076-6.077,6.076-15.911,0-21.986L423.511,4.565c-2.913-2.911-6.866-4.55-10.992-4.55
+           c-4.127,0-8.08,1.639-10.993,4.55l-171.138,171.14L59.25,4.565c-2.913-2.911-6.866-4.55-10.993-4.55
+           c-4.126,0-8.08,1.639-10.992,4.55L4.558,37.284c-6.077,6.075-6.077,15.909,0,21.986l171.138,171.128L4.575,401.505
+           c-6.074,6.077-6.074,15.911,0,21.986l32.709,32.719c2.911,2.911,6.865,4.55,10.992,4.55c4.127,0,8.08-1.639,10.994-4.55
+           l171.117-171.12l171.118,171.12c2.913,2.911,6.866,4.55,10.993,4.55c4.128,0,8.081-1.639,10.992-4.55l32.709-32.719
+           c6.074-6.075,6.074-15.909,0-21.986L285.08,230.397z"/>
+       </svg></div>
+       <div class="rent-details-container">
+            <img src="https://cdn.imagin.studio/getImage?&customer=img&make=${db[dataId].carname.split(" ")[0]}&modelFamily=${db[dataId].carname.split(" ")[1]}&zoomlevel=100" alt="Car Image" width="50%" style="margin: auto;height: fit-content;">
+                <div class="rent-details">
+                <div><strong>Car name</strong>: ${db[dataId].carname}</div>
+                <div><strong>Car Type</strong>: ${db[dataId].car_type}</div>
+                <div><strong>Rental Agency</strong>: ${db[dataId].rental_agency}</div>
+                <div><strong>Card Type</strong>: ${db[dataId].card_type}</div>
+                <div><strong>Starting Price</strong>: <span style="color:red">${Math.floor(db[dataId].rent_price * convertedCurrency * db[dataId].agency_commission / 100) }</span> ${selectedCurrency}</div>
                 <div><strong>Pick up from </strong> ${localStorage.getItem("pickL")} <strong>at</strong> ${localStorage.getItem("pickT")} <strong>on</strong> ${localStorage.getItem("pickD")}</div>
                 <div><strong>Drop at </strong>${localStorage.getItem("dropL")} <strong>at</strong>  ${localStorage.getItem("dropT")} <strong>on</strong> ${localStorage.getItem("dropD")}</div>
                 <div><strong>Distance</strong>:${distance} km</div>
                 <div><strong>Total Price: </strong>${Math.floor(db[dataId].rent_price * convertedCurrency * db[dataId].agency_commission / 100 * (Number(localStorage.getItem("dropD").split("-")[2]) - Number(localStorage.getItem("pickD").split("-")[2])))} ${localStorage.getItem("choose-currency")}</div>
+                </div>
+                </div>
+                <div class="rent-options">
                 <input type="submit" value="Rent this car" id="addRent">
+                </div>
             </form>
             `
         )
@@ -538,14 +610,26 @@ $(document).ready(function () {
         return(
             `
             <div class="rentableCar" id=${index}>
-                <img src="https://cdn.imagin.studio/getImage?&customer=img&make=${element.carname.split(" ")[0]}&modelFamily=${element.carname.split(" ")[1]}&zoomlevel=100" alt="Car Image" width="30%">
-                <div>Car Name: <br>${element.carname}</div>
-                <div>Car Type: <br>${element.car_type}</div>
-                <div>Rental Agency: <br>${element.rental_agency}</div>
-                <div>Card Type: <br>${element.card_type}</div>
-                <div>Starting Price: <br><span style="color:red">${Math.floor(element.rent_price * convertedCurrency * element.agency_commission / 100) }</span> ${selectedCurrency}</div>
-                <button class="selectCar">Select this car</button>
+            <div class="carImage-carModel-carType" style="height:100%;display: flex;flex-direction: column;align-items: center;justify-content: space-around;">
+                <img src="https://cdn.imagin.studio/getImage?&customer=img&make=${element.carname.split(" ")[0]}&modelFamily=${element.carname.split(" ")[1]}&zoomlevel=100" alt="Car Image" loading="lazy" style="height:70%;">
+                <div style="height:10%;"><strong>${element.carname}</strong></div>
             </div>
+            <div style="
+            display: flex;
+            gap: 5px;
+            flex-wrap: wrap;">
+              <div style="display:flex;flex-direction:column;gap:5px;">
+                <div><strong>Agency</strong>: ${element.rental_agency}</div>
+                <div>  <strong>Card Type</strong>: ${element.card_type}</div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:5px;">
+                <div><strong>Car Type: </strong>${element.car_type}</div>
+                <div><strong>Starting Price</strong>:<span style="color:red"> ${Math.floor(element.rent_price * convertedCurrency * element.agency_commission / 100) } ${selectedCurrency}</span>
+                </div>
+            </div>
+            </div>
+            <button class="selectCar">Rent this car</button>
+          </div>
             `
         )
     };

@@ -1,12 +1,14 @@
 // vars
-$apply-padding: 1% 10% 1% 10%
+$apply-padding: 1% 5% 1% 5%
 
 .checked
     color: orange
 
 *
+    user-select: none
     transition: 0.2s
     scroll-behavior: smooth
+    font-family: lato
 
 // special props    
 a
@@ -17,11 +19,15 @@ a
         transition: 0.5s
 
 body
-    font-family: Arial
     margin: 0
 
 h1, h3
     color: #ED2B2A
+
+a
+    display: flex
+    align-items: center
+    justify-content: center
 
 // navigation
 nav
@@ -36,9 +42,50 @@ nav
     height: 6vh
     background: white
     z-index: 2
+    top: 0
 
-#account,.log-out,.selectCar,#viewRent,#thankYouClose,#addRent,#overwriteRent,#overwriteCancel
+#account,.log-out,.selectCar,#viewRent,#thankYouClose,#addRent,#overwriteRent,#overwriteCancel,#askReview,#cancelRide,#cancelRent,#Cancel,#finishRent,#finishRentNoReview,#submit,#submitRent,#account-mobile
     cursor: pointer
+    border-radius: 5px
+    background-color: #ED2B2A
+    border: none
+    color: white
+    width: 100px
+    height: 6vh
+    padding: 1%
+
+#submit
+    width: 40%
+
+#submitRent
+    width: fit-content
+
+select,input[type="date"],input[type="time"]
+    border: 1px solid lightgrey
+    border-radius: 5px
+    text-align: center
+    cursor: pointer
+    &:focus
+        outline: none
+        border: 1px solid #ED2B2A
+
+#pickL,#dropL,#pickT,#dropT,#pickD,#dropD
+        padding: 1%
+        font-weight: bold
+
+#account,.log-out,#askReview,#cancelRide,#account-mobile
+    background: white
+    border: 1px solid #ED2B2A
+    color: #ED2B2A
+    font-weight: bold
+    height: fit-content
+    &:hover
+        background: #ED2B2A
+        color: white
+
+#askReview,#cancelRide
+     height: 50px
+
 
 #loginButton, #registerButton
     margin: 2% 0
@@ -46,6 +93,12 @@ nav
     cursor: pointer
     display: grid
     align-self: center
+    cursor: pointer
+    border-radius: 5px
+    background-color: #ED2B2A
+    border: none
+    color: white
+    padding: 5px 5px
 
 .loginFormMain,.registerFormMain
     display: flex
@@ -57,14 +110,18 @@ nav
 .login-form,.register-form
     width: 60%
     height: 60%
-    background: red
+    background: red 
     position: fixed
     left: 50%
     top: 50%
     transform: translate(-50%, -50%)
-    background: darkgrey
     z-index: 10
-    box-shadow: 0 4px 7px 0 rgba(42,46,59,.2)
+    background: white
+    border-radius: 10px
+    border: 1px solid rgba(0, 0, 0, 0.1411764706)
+    z-index: 10
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px
+
 
 #wrongData
     display: none
@@ -75,6 +132,9 @@ nav
 
 .display
     display: block !important
+
+.display-flex
+    display: flex !important
 
 .account-details
     padding: 9vh 15% 0% 15%
@@ -106,24 +166,50 @@ nav
     color: #038489
     border: none
     outline: none
+    text-align: center
 
 // main
 
 main
     box-sizing: border-box
-    padding: 9vh 10% 0% 10%
+    padding: 9vh 5% 0% 5%
 
 .main-rent
     padding: 0 15% !important
     overflow: overlay
 
+.pick-drop-location,.pick-drop-date,.pick-drop-time
+    display: flex
+    gap: 20px
+    flex-wrap: wrap
+
+.pick-date-container,.drop-date-container,.pick-time-container,.drop-time-container
+    width: min-content
+    gap: 10px
+    display: flex
+    flex-direction: column
+    text-shadow: 0px 1px 2px rgba(6, 7, 10, 0.8)
+    font-weight: bold
+
+.date-container,.time-container
+    gap: 10px
+    display: flex
+
+.pick-container,.drop-container
+    display: flex
+    flex-direction: column
+    width: 30%
+    gap: 10px
+    text-shadow: 0px 1px 2px rgba(6, 7, 10, 0.8)
+    font-weight: bold
+    
 .rent-form
     width: 100%
-    height: 500px
+    min-height: fit-content
     background-image: url("./imgs/car-banner.jpg")
     background-repeat: no-repeat
     background-size: cover
-    background-position: top
+    background-position: center
     border-radius: 2px
     color: white
     padding: 10% 5%
@@ -160,8 +246,14 @@ main
     user-select: none
     cursor: pointer
 
+.show-answer
+    height: min-content !important
+    padding-bottom: 5%
+
 .q-answer
-    display: none
+    transition: 0.4s height
+    height: 0
+    overflow: clip
 
 .rotate-arrow
     transform: rotate(180deg)
@@ -181,26 +273,42 @@ main
     height: 100%
 
 .swiper-slide
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)
     display: flex !important
+    background: white
     flex-direction: column
     justify-content: center
     padding: 1%
     gap: 5px
     box-sizing: border-box
     height: 300px
-    width: 31% !important
+    width: 31% 
     text-align: center
     font-size: 18px
     border: 1px solid lightgrey
     display: flex
     align-items: center
-    border-radius: 5px
+    border-radius: 20px
 
 .swiper-slide img
     display: block
     width: 100%
     height: 100%
     object-fit: cover
+
+.swiper-button-prev,.swiper-button-next
+   color: #ED2B2A  
+
+.swiper
+    display: flex
+    justify-content: center
+
+.swiper-container
+    position: relative
+    width: 80%
+    overflow: hidden
+    display: flex
+    justify-content: center
 
 .rev-comment
     font-size: 14px
@@ -211,37 +319,19 @@ main
     border-radius: 100%
     border: 2px solid #FEBE10
 
-// must change
-.Mark-John,.Grace-Thompson,.Amelia-Parker,.Benjamin-Young,.Samuel-Green
-    background-image: url("./imgs/reviews-photos/Mark-John.jpg")
-    background-size: cover
-    background-position: center
-    background-repeat: no-repeat
-
-.Grace-Thompson
-    background-image: url("./imgs/reviews-photos/Grace-Thompson.jpg")
-
-.Amelia-Parker
-    background-image: url("./imgs/reviews-photos/Amelia-Parker.jpg")
-    background-position: top
-
-.Benjamin-Young
-    background-image: url("./imgs/reviews-photos/Benjamin-Young.jpg")
-
-.Samuel-Green
-    background-image: url("./imgs/reviews-photos/Samuel-Green.jpg")
-
 .top-cars-week
     display: flex
     flex-direction: column
     width: 100%
-    height: 250px
+    height: fit-content
 
 .cars
     height: 100%
     display: flex
     justify-content: space-between
     gap:10px 
+    img
+        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)
     
 
 .car
@@ -253,8 +343,12 @@ main
 
 // footer
 footer
-    padding: 10% 30% 2% 30%
+    padding: 10% 0% 2% 0%
     text-align: center
+    width: 100%
+    display: flex
+    flex-direction: column
+    align-items: center
 
 .footer-nav
     display: flex
@@ -262,8 +356,11 @@ footer
     font-size: 15px
     padding: 3% 3%
     font-weight: bold
+    gap: 10px
+    flex-wrap: wrap
 
 .copyright
+    padding: 0% 10% 0% 10%
     p
         font-size: 12px
 
@@ -276,41 +373,53 @@ footer
     background-image: none
     padding-top: 7vh
     padding-bottom: 1vh
+    background: white
 
     div
         display: flex
         gap: 10px
+        width: min-content
 
 .available-cars-settings
     display: flex
-    height: 88vh
+    height: 100vh
 
 .settings-container
     width: 17%
-    height: 70%
-    border: 1px solid lightgrey
+    height: 60%
     border-bottom: none
     display: flex
     flex-direction: column
     position: fixed
 
-
 .setting-container
     height: 30%
-    border-bottom: 1px solid lightgrey
     padding-bottom: 10px
     h4
         height: 10%
         margin: 5% 0
+    &::-webkit-scrollbar-track
+       border-radius: 10px
+       box-shadow: 0 0 6px rgba(0,0,0,0.3)
+    &::-webkit-scrollbar-thumb
+        border-radius: 10px 
+        box-shadow: 0 0 6px rgba(0,0,0,0.3)
+
 
 .settings
     overflow-y: scroll
-    height: 85%
+    height: 100%
+    &::-webkit-scrollbar
+        display: none
+    
 
 .setting
     padding: 5px 0px
     #price
-        width: 30%
+        width: fit-content
+        margin-top: 2px
+    #price-range
+        width: 100%
     .select-all
         font-weight: bold
 
@@ -331,27 +440,50 @@ footer
 .reset-button
     cursor: pointer
     color: red
+    font-weight: bold
 
 input[type="checkbox"],label
     cursor: pointer
     user-select: none
 
+input[type="email"],input[type="password"],input[type="text"]
+    border: none
+    border-bottom: 1px solid #ED2B2A 
+    outline: none
+     
+
+#securityDeposit,#totalPrice
+    .settings
+        overflow: hidden
+
 .available-cars
     width: 85%
     padding-left: 25%
 
+legend
+    font-weight: bold
+    width: auto
+    margin-left: auto
+    margin-right: auto
 
+fieldset
+    border: 1px solid lightgrey
+    border-radius: 5px
+
+input[type="checkbox"],input[type="range"]
+    accent-color: #ED2B2A 
 
 .selectCarHover
     box-shadow: 0 4px 7px 0 rgba(42,46,59,.2)
 
 .rentableCar
     display: flex
+    border-radius: 5px
     justify-content: space-between
     align-items: center
     width: 100%
     padding: 5px
-    height: auto
+    height: 20vh
     border: 1px solid lightgrey
     margin: 0px 10px 10px 10px
 
@@ -362,15 +494,16 @@ input[type="checkbox"],label
     left: 50%
     top: 50%
     transform: translate(-50%, -50%)
-    background: darkgrey
+    background: white
+    border-radius: 10px
     z-index: 10
-    box-shadow: 0 4px 7px 0 rgba(42,46,59,.2)
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px
 
 .selectContainerClose,.loginFormClose,.registerFormClose
     cursor: pointer
     position: absolute
     right: 19px
-    top: 10px
+    top: 15px
 
 .thankYou
     padding: 0% 10%
@@ -381,16 +514,209 @@ input[type="checkbox"],label
     height: 40%
     align-items: center
 //account
-.currentRentedRide
+.currentRentedRide,.currentRentedRideNone
     width: 100%
-    height: auto
+    height: 100px
     border: 1px solid lightgrey
-    display: flex
-    justify-content: space-around
+    display: grid
+    grid-template-columns: 1fr 1fr 1fr
     align-items: center
-    padding: 5px
+    padding: 1%
     cursor: pointer
+    border-radius: 5px
+    background: white
+    text-align: center
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)
+    &:hover
+        box-shadow: 0 4px 7px 0 rgba(42,46,59,.2)
+
+.currentRentedRideNone
+    display: flex
+    font-weight: bold
+    color: #2a2e3b
+
+.current-rent-title
+    margin-bottom: 10px
 
 .reviewStar
     cursor: pointer
         
+.img-car
+    display: flex
+    flex-direction: column
+    font-weight: bold
+    align-items: center
+    height: 100px
+
+.rent-options
+    height: 20%
+    display: flex
+    justify-content: center
+    gap: 10px
+
+.rent-details-container
+    height: 75%
+    display: flex
+
+.currentRentedRidePop
+    width: 60%
+    height: 65%
+
+.rent-details
+    width: fit-content
+    margin: auto
+
+.show-filters,.show-date
+    display: none
+    cursor: pointer
+    border: none !important
+    position: fixed
+    font-weight: bold
+    border: 1px solid lightgrey
+    text-align: center
+    bottom: 12vh
+    width: fit-content
+    height: fit-content
+    background: white
+    padding: 2%
+    margin-left: 50%
+    transform: translateX(-50%)
+    background-color: #ED2B2A
+    color: white
+    border-radius: 50px
+.show-date
+    bottom: 5vh
+    border-top: none
+
+//media screen
+
+
+//mobile - index
+.hamburger-mobile-container,.hamburger-mobile
+    display: none
+    height: 100%
+    border: none
+    background: none
+    cursor: pointer
+
+.nav-elements-mobile
+    z-index: 2
+    width: 100%
+    margin-top: 6vh
+    height: fit-content
+    display: none
+    flex-direction: column
+    align-items: center
+    gap: 5px
+    position: fixed
+    background: white
+    border-bottom: 1px solid lightgrey
+    padding-bottom: 2%
+
+.substractPadding
+    padding-top: 1%
+@media only screen and (max-width: 768px) 
+    .pick-drop-location, .pick-drop-date,.date-container, .time-container
+        font-size: 18px
+        flex-direction: column
+        width: 100%
+    //index
+    .nav-elements-mobile
+        a
+            font-size: 20px
+    .hamburger-mobile-container,.hamburger-mobile
+        display: flex
+    
+    .nav-elements
+        display: none
+  
+    .car
+        width: 60%
+        display: inline
+    
+    .cars
+        display: flex
+        align-items: center
+        flex-direction: column
+
+    //rent
+    .rent-page
+        display: none
+    .main-rent
+        padding: 6vh 1% 0% 1% !important
+
+    .settings-container
+        display: none
+        width: 45%
+        background: white
+        position: absolute
+        height: 94vh
+        top: 6vh
+        overflow-y: scroll
+    .available-cars
+        width: 100%
+        padding: 2%
+        display: flex
+        flex-direction: column
+        align-items: center
+    .rent-page
+        flex-direction: column
+        border: 1px solid lightgrey
+        position: fixed
+        width: 100%
+    .rentableCar
+        margin: 0px 0px 10px 0px
+    #pickL, #dropL, #pickT, #dropT, #pickD, #dropD
+        width: 80vw
+        font-size: 18px
+    .show-filters,.show-date
+        display: block
+        padding: 1.5%
+
+    .rent-form
+        display: flex
+        flex-direction: column
+        align-items: center
+    
+@media only screen and (max-width: 425px) 
+    //index
+    h1
+        text-align: center
+
+    .currentRentedRidePop,.thankYou,.selectContainer,.login-form,.register-form
+        width: 100%
+        height: 100%
+
+    .account-details 
+        padding: 9vh 5% 0% 5%
+    
+    .rentableCar
+        flex-direction: column
+        height: fit-content
+        gap: 5px
+    .carImage-carModel-carType
+        img
+            width: 100%
+    .selectCar
+        height: 8vh
+
+    .show-filters,.show-date
+        display: block
+        padding: 2%
+    .show-filters
+        bottom: 10vh
+@media only screen and (max-width: 375px) 
+    
+    //index
+    .footer-nav
+        flex-direction: column
+    
+    //rent
+    .rent-details-container
+        flex-direction: column
+        img
+            width: 80%
+
+//modifiers
+.--move-filter-button
+    margin-left: 65%
