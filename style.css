@@ -67,6 +67,8 @@ nav {
 #submitRent {
   width: -moz-fit-content;
   width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 
 select, input[type=date], input[type=time] {
@@ -74,6 +76,8 @@ select, input[type=date], input[type=time] {
   border-radius: 5px;
   text-align: center;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
 }
 select:focus, input[type=date]:focus, input[type=time]:focus {
   outline: none;
@@ -185,6 +189,7 @@ select:focus, input[type=date]:focus, input[type=time]:focus {
   font-size: 30px;
   font-weight: bold;
   color: #2a2e3b;
+  text-shadow: 0px 1px 2px rgba(6, 7, 10, 0.8);
 }
 
 #choose-currency {
@@ -194,6 +199,7 @@ select:focus, input[type=date]:focus, input[type=time]:focus {
   border: none;
   outline: none;
   text-align: center;
+  background: white;
 }
 
 main {
@@ -209,7 +215,6 @@ main {
 .pick-drop-location, .pick-drop-date, .pick-drop-time {
   display: flex;
   gap: 20px;
-  flex-wrap: wrap;
 }
 
 .pick-date-container, .drop-date-container, .pick-time-container, .drop-time-container {
@@ -266,9 +271,6 @@ main {
 .about-us {
   padding: 6% 0% 6% 0%;
 }
-.about-us p {
-  font-size: 14px;
-}
 
 .faq {
   padding: 0% 15% 6% 15%;
@@ -291,15 +293,14 @@ main {
 }
 
 .show-answer {
-  height: -moz-min-content !important;
-  height: min-content !important;
+  max-height: 1000px !important;
   padding-bottom: 5%;
 }
 
 .q-answer {
-  transition: 0.4s height;
-  height: 0;
-  overflow: clip;
+  transition: 0.4s max-height;
+  max-height: 0;
+  overflow: hidden;
 }
 
 .rotate-arrow {
@@ -322,7 +323,6 @@ main {
 }
 
 .swiper-slide {
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   display: flex !important;
   background: white;
   flex-direction: column;
@@ -338,6 +338,7 @@ main {
   display: flex;
   align-items: center;
   border-radius: 20px;
+  background: linear-gradient(0deg, rgb(229, 229, 229) 0%, rgb(255, 255, 255) 50%);
 }
 
 .swiper-slide img {
@@ -369,6 +370,10 @@ main {
   font-size: 14px;
 }
 
+.rev-name {
+  font-weight: bold;
+}
+
 .rev-photo {
   width: 100px;
   height: 100px;
@@ -390,17 +395,18 @@ main {
   justify-content: space-between;
   gap: 10px;
 }
-.cars img {
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-}
 
 .car {
   width: 33%;
   height: 100%;
   border: 1px solid lightgrey;
   border-radius: 5px;
-  -o-object-fit: contain;
-     object-fit: contain;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  padding: 1%;
+}
+.car img {
+  width: 70%;
 }
 
 footer {
@@ -491,7 +497,9 @@ footer {
 .setting #price {
   width: -moz-fit-content;
   width: fit-content;
-  margin-top: 2px;
+  border: none;
+  color: red;
+  font-weight: bold;
 }
 .setting #price-range {
   width: 100%;
@@ -566,10 +574,11 @@ input[type=checkbox], input[type=range] {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 5px;
+  padding: 10px;
   height: 20vh;
   border: 1px solid lightgrey;
   margin: 0px 10px 10px 10px;
+  box-shadow: 1px 1px 3px -1px black;
 }
 
 .selectContainer, .currentRentedRidePop, .thankYou, .overwriteRentContainer {
@@ -593,12 +602,12 @@ input[type=checkbox], input[type=range] {
 }
 
 .thankYou {
-  padding: 0% 10%;
+  padding: 1% 10%;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 40%;
+  height: 50%;
   align-items: center;
 }
 
@@ -716,6 +725,12 @@ input[type=checkbox], input[type=range] {
   padding-bottom: 2%;
 }
 
+.rev-buttons {
+  display: flex;
+  gap: 10px;
+  padding-top: 20px;
+}
+
 .substractPadding {
   padding-top: 1%;
 }
@@ -725,6 +740,13 @@ input[type=checkbox], input[type=range] {
     font-size: 18px;
     flex-direction: column;
     width: 100%;
+  }
+  .pick-drop-time {
+    flex-wrap: wrap;
+  }
+  #submitRent {
+    width: 60%;
+    height: 4vh;
   }
   .nav-elements-mobile a {
     font-size: 20px;
@@ -744,6 +766,9 @@ input[type=checkbox], input[type=range] {
     align-items: center;
     flex-direction: column;
   }
+  .cars img {
+    width: 80%;
+  }
   .rent-page {
     display: none;
   }
@@ -755,9 +780,17 @@ input[type=checkbox], input[type=range] {
     width: 45%;
     background: white;
     position: absolute;
-    height: 94vh;
-    top: 6vh;
+    height: 100%;
+    box-sizing: border-box;
+    top: 0;
+    z-index: 3;
     overflow-y: scroll;
+    border-radius: 10px;
+    padding: 1% 1% 1% 0%;
+    border: 1px solid lightgrey;
+    border-left: none;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
   }
   .available-cars {
     width: 100%;
@@ -777,7 +810,7 @@ input[type=checkbox], input[type=range] {
   }
   #pickL, #dropL, #pickT, #dropT, #pickD, #dropD {
     width: 80vw;
-    font-size: 18px;
+    font-size: 16px;
   }
   .show-filters, .show-date {
     display: block;
@@ -810,7 +843,8 @@ input[type=checkbox], input[type=range] {
     width: 100%;
   }
   .selectCar {
-    height: 8vh;
+    height: 6vh;
+    width: 90%;
   }
   .show-filters, .show-date {
     display: block;
@@ -818,6 +852,20 @@ input[type=checkbox], input[type=range] {
   }
   .show-filters {
     bottom: 10vh;
+  }
+  .rent-details-container {
+    flex-direction: column;
+  }
+  .rent-details-container img {
+    width: 80%;
+  }
+  .rent-details {
+    gap: 5px;
+    display: flex;
+    flex-direction: column;
+  }
+  #addRent {
+    width: 80%;
   }
 }
 @media only screen and (max-width: 375px) {
