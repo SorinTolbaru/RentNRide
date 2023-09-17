@@ -14,6 +14,9 @@
 a {
   color: #2a2e3b;
   text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 a:hover {
   color: #ED2B2A;
@@ -28,10 +31,12 @@ h1, h3 {
   color: #ED2B2A;
 }
 
-a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.display {
+  display: block !important;
+}
+
+.display-flex {
+  display: flex !important;
 }
 
 nav {
@@ -49,12 +54,12 @@ nav {
   top: 0;
 }
 
-#account, .log-out, .selectCar, #viewRent, #thankYouClose, #addRent, #overwriteRent, #overwriteCancel, #askReview, #cancelRide, #cancelRent, #Cancel, #finishRent, #finishRentNoReview, #submit, #submitRent, #account-mobile {
+#account, .log-out, .selectCar, #viewRent, #respond-popupClose, #addRent, #overwriteRent, #overwriteCancel, #askReview, #cancelRide, #cancelRent, #Cancel, #finishRent, #finishRentNoReview, #submit, #submitRent, #account-mobile {
   cursor: pointer;
   border-radius: 5px;
   background-color: #ED2B2A;
   border: none;
-  color: white;
+  color: #ffffff;
   width: 100px;
   height: 6vh;
   padding: 1%;
@@ -99,7 +104,7 @@ select:focus, input[type=date]:focus, input[type=time]:focus {
 }
 #account:hover, .log-out:hover, #askReview:hover, #cancelRide:hover, #account-mobile:hover {
   background: #ED2B2A;
-  color: white;
+  color: #ffffff;
 }
 
 #askReview, #cancelRide {
@@ -116,7 +121,7 @@ select:focus, input[type=date]:focus, input[type=time]:focus {
   border-radius: 5px;
   background-color: #ED2B2A;
   border: none;
-  color: white;
+  color: #ffffff;
   padding: 5px 5px;
 }
 
@@ -151,14 +156,6 @@ select:focus, input[type=date]:focus, input[type=time]:focus {
   text-align: center;
   color: red;
   font-weight: bold;
-}
-
-.display {
-  display: block !important;
-}
-
-.display-flex {
-  display: flex !important;
 }
 
 .account-details {
@@ -250,7 +247,7 @@ main {
   background-size: cover;
   background-position: center;
   border-radius: 2px;
-  color: white;
+  color: #ffffff;
   padding: 10% 5%;
   box-sizing: border-box;
   text-shadow: 0px 1px 2px rgba(6, 7, 10, 0.8);
@@ -263,7 +260,7 @@ main {
   background-color: #ED2B2A;
   width: 40%;
   height: 20%;
-  color: white;
+  color: #ffffff;
   font-weight: bold;
   border-radius: 2500rem;
 }
@@ -444,6 +441,7 @@ footer {
   padding-top: 7vh;
   padding-bottom: 1vh;
   background: white;
+  flex-wrap: wrap;
 }
 .rent-page div {
   display: flex;
@@ -574,24 +572,25 @@ input[type=checkbox], input[type=range] {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 10px;
+  padding: 2.5% 1% 2.5% 1%;
   height: 20vh;
   border: 1px solid lightgrey;
   margin: 0px 10px 10px 10px;
   box-shadow: 1px 1px 3px -1px black;
+  background: linear-gradient(0deg, rgb(229, 229, 229) 0%, rgb(255, 255, 255) 50%);
 }
 
-.selectContainer, .currentRentedRidePop, .thankYou, .overwriteRentContainer {
+.selectContainer, .currentRentedRidePop, .respond-popup, .overwriteRentContainer {
   width: 80%;
   height: 80%;
   position: fixed;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  background: white;
   border-radius: 10px;
   z-index: 10;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  background: linear-gradient(0deg, rgb(229, 229, 229) 0%, rgb(255, 255, 255) 50%);
 }
 
 .selectContainerClose, .loginFormClose, .registerFormClose {
@@ -601,7 +600,7 @@ input[type=checkbox], input[type=range] {
   top: 15px;
 }
 
-.thankYou {
+.respond-popup {
   padding: 1% 10%;
   box-sizing: border-box;
   display: flex;
@@ -618,12 +617,12 @@ input[type=checkbox], input[type=range] {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
-  padding: 1%;
+  padding: 5% 1% 5% 1%;
   cursor: pointer;
   border-radius: 5px;
-  background: white;
   text-align: center;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  background: linear-gradient(0deg, rgb(229, 229, 229) 0%, rgb(255, 255, 255) 50%);
 }
 .currentRentedRide:hover, .currentRentedRideNone:hover {
   box-shadow: 0 4px 7px 0 rgba(42, 46, 59, 0.2);
@@ -692,7 +691,7 @@ input[type=checkbox], input[type=range] {
   margin-left: 50%;
   transform: translateX(-50%);
   background-color: #ED2B2A;
-  color: white;
+  color: #ffffff;
   border-radius: 50px;
 }
 
@@ -826,7 +825,7 @@ input[type=checkbox], input[type=range] {
   h1 {
     text-align: center;
   }
-  .currentRentedRidePop, .thankYou, .selectContainer, .login-form, .register-form {
+  .currentRentedRidePop, .respond-popup, .selectContainer, .login-form, .register-form {
     width: 100%;
     height: 100%;
   }

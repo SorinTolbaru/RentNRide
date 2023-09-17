@@ -1,5 +1,7 @@
 // vars
 $apply-padding: 1% 5% 1% 5%
+$main-color:#ED2B2A
+$secondary-color:#ffffff
 
 .checked
     color: orange
@@ -14,20 +16,26 @@ $apply-padding: 1% 5% 1% 5%
 a
     color: #2a2e3b
     text-decoration: none
+    display: flex
+    align-items: center
+    justify-content: center
     &:hover
-        color: #ED2B2A
+        color: $main-color
         transition: 0.5s
 
 body
     margin: 0
 
 h1, h3
-    color: #ED2B2A
+    color: $main-color
 
-a
-    display: flex
-    align-items: center
-    justify-content: center
+
+.display
+    display: block !important
+
+.display-flex
+    display: flex !important
+
 
 // navigation
 nav
@@ -44,12 +52,12 @@ nav
     z-index: 2
     top: 0
 
-#account,.log-out,.selectCar,#viewRent,#thankYouClose,#addRent,#overwriteRent,#overwriteCancel,#askReview,#cancelRide,#cancelRent,#Cancel,#finishRent,#finishRentNoReview,#submit,#submitRent,#account-mobile
+#account,.log-out,.selectCar,#viewRent,#respond-popupClose,#addRent,#overwriteRent,#overwriteCancel,#askReview,#cancelRide,#cancelRent,#Cancel,#finishRent,#finishRentNoReview,#submit,#submitRent,#account-mobile
     cursor: pointer
     border-radius: 5px
-    background-color: #ED2B2A
+    background-color: $main-color
     border: none
-    color: white
+    color: $secondary-color
     width: 100px
     height: 6vh
     padding: 1%
@@ -79,12 +87,12 @@ select,input[type="date"],input[type="time"]
 #account,.log-out,#askReview,#cancelRide,#account-mobile
     background: white
     border: 1px solid #ED2B2A
-    color: #ED2B2A
+    color: $main-color
     font-weight: bold
     height: fit-content
     &:hover
         background: #ED2B2A
-        color: white
+        color: $secondary-color
 
 #askReview,#cancelRide
      height: 50px
@@ -98,9 +106,9 @@ select,input[type="date"],input[type="time"]
     align-self: center
     cursor: pointer
     border-radius: 5px
-    background-color: #ED2B2A
+    background-color: $main-color
     border: none
-    color: white
+    color: $secondary-color
     padding: 5px 5px
 
 .loginFormMain,.registerFormMain
@@ -133,11 +141,6 @@ select,input[type="date"],input[type="time"]
     color: red
     font-weight: bold
 
-.display
-    display: block !important
-
-.display-flex
-    display: flex !important
 
 .account-details
     padding: 9vh 15% 0% 15%
@@ -152,7 +155,7 @@ select,input[type="date"],input[type="time"]
 .logo-N
     transform: rotate(16deg)
     display: inline-block
-    color: #ED2B2A
+    color: $main-color
 
 .nav-elements
     display: flex
@@ -215,7 +218,7 @@ main
     background-size: cover
     background-position: center
     border-radius: 2px
-    color: white
+    color: $secondary-color
     padding: 10% 5%
     box-sizing: border-box
     text-shadow: 0px 1px 2px rgba(6, 7, 10, 0.8)
@@ -224,10 +227,10 @@ main
         margin-top: 2%
         border: none
         font-size: 18px
-        background-color: #ED2B2A
+        background-color: $main-color
         width: 40%
         height: 20%
-        color: white
+        color: $secondary-color
         font-weight: bold
         border-radius: 2500rem
 
@@ -299,7 +302,7 @@ main
     object-fit: cover
 
 .swiper-button-prev,.swiper-button-next
-   color: #ED2B2A  
+   color: $main-color  
 
 .swiper
     display: flex
@@ -370,7 +373,7 @@ footer
     p
         font-size: 12px
 
-//rent.html
+//Rent Page
 .rent-page
     display: flex
     justify-content: center
@@ -380,7 +383,7 @@ footer
     padding-top: 7vh
     padding-bottom: 1vh
     background: white
-
+    flex-wrap: wrap
     div
         display: flex
         gap: 10px
@@ -479,7 +482,7 @@ fieldset
     border-radius: 5px
 
 input[type="checkbox"],input[type="range"]
-    accent-color: #ED2B2A 
+    accent-color: $main-color 
 
 .selectCarHover
     box-shadow: 0 4px 7px 0 rgba(42,46,59,.2)
@@ -490,23 +493,24 @@ input[type="checkbox"],input[type="range"]
     justify-content: space-between
     align-items: center
     width: 100%
-    padding: 10px
+    padding: 2.5% 1% 2.5% 1%
     height: 20vh
     border: 1px solid lightgrey
     margin: 0px 10px 10px 10px
     box-shadow: 1px 1px 3px -1px black
+    background: linear-gradient(0deg, rgb(229, 229, 229) 0%, rgb(255, 255, 255) 50%)
 
-.selectContainer,.currentRentedRidePop,.thankYou,.overwriteRentContainer
+.selectContainer,.currentRentedRidePop,.respond-popup,.overwriteRentContainer
     width: 80%
     height: 80%
     position: fixed
     left: 50%
     top: 50%
     transform: translate(-50%, -50%)
-    background: white
     border-radius: 10px
     z-index: 10
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px
+    background: linear-gradient(0deg, rgb(229, 229, 229) 0%, rgb(255, 255, 255) 50%)
 
 .selectContainerClose,.loginFormClose,.registerFormClose
     cursor: pointer
@@ -514,7 +518,7 @@ input[type="checkbox"],input[type="range"]
     right: 19px
     top: 15px
 
-.thankYou
+.respond-popup
     padding: 1% 10%
     box-sizing: border-box
     display: flex
@@ -522,7 +526,8 @@ input[type="checkbox"],input[type="range"]
     justify-content: center
     height: 50%
     align-items: center
-//account
+
+//Account Page
 .currentRentedRide,.currentRentedRideNone
     width: 100%
     height: 100px
@@ -530,12 +535,12 @@ input[type="checkbox"],input[type="range"]
     display: grid
     grid-template-columns: 1fr 1fr 1fr
     align-items: center
-    padding: 1%
+    padding: 5% 1% 5% 1%
     cursor: pointer
     border-radius: 5px
-    background: white
     text-align: center
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)
+    background: linear-gradient(0deg, rgb(229, 229, 229) 0%, rgb(255, 255, 255) 50%)
     &:hover
         box-shadow: 0 4px 7px 0 rgba(42,46,59,.2)
 
@@ -590,14 +595,14 @@ input[type="checkbox"],input[type="range"]
     padding: 2%
     margin-left: 50%
     transform: translateX(-50%)
-    background-color: #ED2B2A
-    color: white
+    background-color: $main-color
+    color: $secondary-color
     border-radius: 50px
 .show-date
     bottom: 5vh
     border-top: none
 
-//media screen
+//Media Screen
 
 
 //mobile - index
@@ -629,6 +634,7 @@ input[type="checkbox"],input[type="range"]
 
 .substractPadding
     padding-top: 1%
+
 @media only screen and (max-width: 768px) 
     .pick-drop-location, .pick-drop-date,.date-container, .time-container
         font-size: 18px
@@ -707,13 +713,12 @@ input[type="checkbox"],input[type="range"]
         flex-direction: column
         align-items: center
 
-
 @media only screen and (max-width: 425px) 
     //index
     h1
         text-align: center
 
-    .currentRentedRidePop,.thankYou,.selectContainer,.login-form,.register-form
+    .currentRentedRidePop,.respond-popup,.selectContainer,.login-form,.register-form
         width: 100%
         height: 100%
 
@@ -747,6 +752,7 @@ input[type="checkbox"],input[type="range"]
 
     #addRent
         width: 80%
+
 @media only screen and (max-width: 375px) 
     
     //index
