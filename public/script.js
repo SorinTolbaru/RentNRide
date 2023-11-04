@@ -3,6 +3,14 @@ import * as Utilites from "./utilites.js"
 
 $(document).ready(function () {
 
+    //set minimium pickD, dropL to today
+    const currentDateD = new Date().toISOString().split('T')[0];
+    $("#pickD").attr("min",currentDateD)
+    $("#dropD").attr("min",currentDateD)
+    $("#pickD").on("change",()=>{
+        $("#dropD").attr("min",$("#pickD").val())
+    })
+
     //mobile menu
     $(".hamburger-mobile").click(function(){
         let state;

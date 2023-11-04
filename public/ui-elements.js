@@ -107,11 +107,11 @@ export function currentRent(foundUser){
         return(
             `<div class="currentRentedRide">
             <div class="img-car">
-            <img src="https://cdn.imagin.studio/getImage?&customer=img&make=${foundUser.curent_rent.car_name.split(" ")[0]}&modelFamily=${foundUser.curent_rent.car_name.split(" ")[1]}&zoomlevel=100" alt="Car Image" height="80%">
-           <div style="height:20%"> ${foundUser.curent_rent.car_name}</div>
+            <img src="https://cdn.imagin.studio/getImage?&customer=img&make=${foundUser.current_rent.car_name.split(" ")[0]}&modelFamily=${foundUser.current_rent.car_name.split(" ")[1]}&zoomlevel=100" alt="Car Image" height="80%">
+           <div style="height:20%"> ${foundUser.current_rent.car_name}</div>
             </div>
-            <div><strong>Pick Location</strong>: ${foundUser.curent_rent.pick_location}</div>
-            <div><strong>Drop Location</strong>: ${foundUser.curent_rent.drop_location}</div>
+            <div><strong>Pick Location</strong>: ${foundUser.current_rent.pick_location}</div>
+            <div><strong>Drop Location</strong>: ${foundUser.current_rent.drop_location}</div>
         </div>`
         )
     }else{
@@ -224,15 +224,15 @@ export function createPopup(foundUser,type){
            c6.074-6.075,6.074-15.909,0-21.986L285.08,230.397z"/>
        </svg></div>
         <div class="rent-details-container">
-            <img src="https://cdn.imagin.studio/getImage?&customer=img&make=${foundUser.curent_rent.car_name.split(" ")[0]}&modelFamily=${foundUser.curent_rent.car_name.split(" ")[1]}&zoomlevel=100" alt="Car Image" width="50%" style="margin: auto;height: fit-content;">
+            <img src="https://cdn.imagin.studio/getImage?&customer=img&make=${foundUser.current_rent.car_name.split(" ")[0]}&modelFamily=${foundUser.current_rent.car_name.split(" ")[1]}&zoomlevel=100" alt="Car Image" width="50%" style="margin: auto;height: fit-content;">
                 <div class="rent-details">
-                <div><strong>Car</strong>: ${foundUser.curent_rent.car_name}</div>
-                <div><strong>Pick Location</strong>: ${foundUser.curent_rent.pick_location}</div>
-                <div> <strong>Drop Location</strong>: ${foundUser.curent_rent.drop_location}</div>
-                <div> <strong>Pick date</strong>: ${foundUser.curent_rent.pick_date}</div>
-                <div><strong>Drop date</strong>: ${foundUser.curent_rent.drop_date}</div>
-                <div><strong>Pick time</strong>: ${foundUser.curent_rent.pick_time}</div>
-                <div> <strong>Drop time</strong>: ${foundUser.curent_rent.drop_time}</div>
+                <div><strong>Car</strong>: ${foundUser.current_rent.car_name}</div>
+                <div><strong>Pick Location</strong>: ${foundUser.current_rent.pick_location}</div>
+                <div> <strong>Drop Location</strong>: ${foundUser.current_rent.drop_location}</div>
+                <div> <strong>Pick date</strong>: ${foundUser.current_rent.pick_date}</div>
+                <div><strong>Drop date</strong>: ${foundUser.current_rent.drop_date}</div>
+                <div><strong>Pick time</strong>: ${foundUser.current_rent.pick_time}</div>
+                <div> <strong>Drop time</strong>: ${foundUser.current_rent.drop_time}</div>
                 </div>
         </div>
         <div class="rent-options">

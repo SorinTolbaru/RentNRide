@@ -17,12 +17,12 @@
 
 <body>
     <nav>
-        <div class="logo"><a href="index.html">Rent<span class="logo-N">N</span><u>Ride</u></a> </div>
+        <div class="logo"><a href="page.html">Rent<span class="logo-N">N</span><u>Ride</u></a> </div>
         <div class="nav-elements">
             <a href="#">Home</a>
             <a href="#faq">FAQ</a>
             <a href="#rev">Reviews</a>
-            <select name="currency" id="choose-currency">
+            <select name="currency" id="choose-currency" required>
                 <option value="USD">USD</option>
                 <option value="EURO">EURO</option>
                 <option value="Lei">Lei</option>
@@ -33,7 +33,7 @@
        
         </div>        
         <div class="hamburger-mobile-container">
-            <select name="currency" id="choose-currency">
+            <select name="currency" id="choose-currency" required>
                 <option value="USD">USD</option>
                 <option value="EURO">EURO</option>
                 <option value="Lei">Lei</option>
@@ -63,7 +63,7 @@
             <div class="pick-drop-location">
                 <div class="pick-container">
                     <label for="pickL">Pick Up Location</label>
-                    <select name="pick-location" id="pickL">
+                    <select name="pick-location" id="pickL" required>
                         <option value="Berlin">Berlin</option>
                         <option value="Munich">Munich</option>
                         <option value="Hamburg">Hamburg</option>
@@ -83,7 +83,7 @@
                 </div>
                 <div class="drop-container">
                     <label for="pickL">Drop Location</label>
-                    <select name="drop-location" id="dropL">
+                    <select name="drop-location" id="dropL" required>
                         <option value="Berlin">Berlin</option>
                         <option value="Munich">Munich</option>
                         <option value="Hamburg">Hamburg</option>
@@ -107,21 +107,21 @@
                 <div class="date-container">
                     <div class="pick-date-container">
                         <label for="pickD">Pick Date</label>
-                        <input type="date" name="pick-date" id="pickD">
+                        <input type="date" name="pick-date" id="pickD" required>
                     </div>
                     <div class="drop-date-container">
                         <label for="dropD">Drop Date</label>
-                        <input type="date" name="drop-date" id="dropD">
+                        <input type="date" name="drop-date" id="dropD" required>
                     </div>
                 </div>
                     <div class="time-container">
                 <div class="pick-time-container">
                     <label for="pickT">Pick Time</label>
-                    <input type="time" name="pick-time" id="pickT" >
+                    <input type="time" name="pick-time" id="pickT" required>
                 </div>
                 <div class="drop-time-container">
                     <label for="dropT">Drop Date</label>
-                    <input type="time" name="drop-time" id="dropT" >
+                    <input type="time" name="drop-time" id="dropT" required>
                 </div>
                     </div>
 
@@ -331,6 +331,7 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 
     <script>
+
         var swiper = new Swiper(".swiper-container", {
             slidesPerView: 3,
             spaceBetween: 20,
