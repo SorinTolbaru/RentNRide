@@ -10,9 +10,14 @@ app.use(cors());
 app.use(express.json());
 require("dotenv").config()
 
+mongoose.set('useNewUrlParser', true);
+mongoose.set('useFindAndModify', false);
+mongoose.set('useCreateIndex', true);
+mongoose.set('useUnifiedTopology', true);
+
+
 const mongoURLKey = process.env.MONGO_DATABASE_URL;
 const apiKey = process.env.API_KEY;
-
 const mongoURL = mongoURLKey;
 
 mongoose.connect(mongoURL, { useNewUrlParser: true, useUnifiedTopology: true });
@@ -78,13 +83,13 @@ dbConnection.once("open", () => {
     app.put("/modifyRide/:id/:carname",async(req,res)=>{
         console.log(req.params.id,req.params.carname);
         try{
-           await Accounts.findOneAndUpdate(
+           await Accounts.updateOne(
                 { _id:req.params.id },
                 { $set: req.body },
                 { new: true, runValidators: true }
             )
             if(req.params.carname){
-            await Cars.findOneAndUpdate(
+            await Cars.updateOne(
                 { carname:req.params.carname },
                 { $inc: { wanted: 1 } },
                 { new: true, runValidators: true }
