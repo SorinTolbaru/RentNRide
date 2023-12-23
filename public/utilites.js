@@ -214,8 +214,27 @@ export async function getDistance(){
         }
     
     })
-    return Math.round(distance.rows[0].elements[0].distance.value / 1000);
+
+    return calculateDistance(distance[0], distance[1])
 }  
+
+function calculateDistance(coord1, coord2) {
+    const R = 6371; // Earth's radius in kilometers
+    const dLat = (coord2.lat - coord1.lat) * (Math.PI / 180);
+    const dLon = (coord2.lon - coord1.lon) * (Math.PI / 180);
+    const a =
+        Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+        Math.cos(coord1.lat * (Math.PI / 180)) *
+        Math.cos(coord2.lat * (Math.PI / 180)) *
+        Math.sin(dLon / 2) * Math.sin(dLon / 2);
+    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    const distance = R * c;
+    return Math.round(distance);
+}
+
+
+
+
  //get all initial filter options
 export let filter = {
     filterCarType : [],
@@ -256,7 +275,9 @@ export function createHtmlElements(db){
         $(".available-cars").html([...cars])
         //bring final car form
         $(".selectCar").click(function (){
+            $(".main-rent").append("<div id='loading'>Loading...</div>")
             getDistance().then(d=>{
+                $("#loading").remove()
                 let carID = $($(this).parent()[0]).attr("id")
                 $(".selectContainer").length < 1 ? $("body").append(UiElements.createCarFormElement(carID,db,convertedCurrency,selectedCurrency,d)) : null;
             

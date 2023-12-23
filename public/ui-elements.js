@@ -42,7 +42,7 @@ export function createCarElement(element,index,convertedCurrency,selectedCurrenc
         <div class="rentableCar" id=${index}>
         <div class="carImage-carModel-carType" style="height:100%;display: flex;flex-direction: column;align-items: center;justify-content: space-around;">
             <img src="https://cdn.imagin.studio/getImage?&customer=img&make=${element.carname.split(" ")[0]}&modelFamily=${element.carname.split(" ")[1]}&zoomlevel=100" alt="Car Image" loading="lazy" style="height:70%;">
-            <div style="height:10%;"><strong>${element.carname}</strong></div>
+            <div style="min-height:10%;"><strong>${element.carname}</strong></div>
         </div>
         <div style="
         display: flex;

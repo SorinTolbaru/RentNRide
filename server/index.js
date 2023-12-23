@@ -8,13 +8,16 @@ const Cars = require("./schemas/Cars");
 const app = express();
 app.use(cors());
 app.use(express.json());
+require("dotenv").config()
 
-const mongoURL = "mongodb+srv://tolbarusorin:qwerty123@chatx.orqrk1y.mongodb.net/RentNRide";
+const mongoURLKey = process.env.MONGO_DATABASE_URL;
+const apiKey = process.env.API_KEY;
 
-mongoose.connect(mongoURL);
+const mongoURL = mongoURLKey;
+
+mongoose.connect(mongoURL, { useNewUrlParser: true, useUnifiedTopology: true });
 
 const dbConnection = mongoose.connection;
-
 dbConnection.on("error", (error) => {
   console.error("MongoDB connection error:", error);
 });
@@ -24,7 +27,7 @@ dbConnection.once("open", () => {
     console.log("Connected to MongoDB");
 
     const server = app.listen('3000',()=>{
-        console.log('server started on http://localhost:3000');
+        console.log('server started with no problems');
     })
 
     app.use(express.static('public'))
@@ -42,9 +45,13 @@ dbConnection.once("open", () => {
 
     app.get("/getDistance",async (req,res)=>{
         const {drop, pick} = req.query
-        let rawData = await fetch(`https://maps.googleapis.com/maps/api/distancematrix/json?destinations=${drop}&origins=${pick}&units=metric&key=AIzaSyBgG2ZFnmUnevD6YNPtwczEiJXf_8Uqtmw`);
-        let data = await rawData.json()
-        res.send(data)
+        let coordonateDrop = await getCoordonates(drop)
+        let coordonatePick = await getCoordonates(pick)
+
+        let dropLocation = {lat:coordonateDrop[0].latitude,lon:coordonateDrop[0].longitude}
+        let pickLocation = {lat:coordonatePick[0].latitude,lon:coordonatePick[0].longitude}
+
+        res.send([dropLocation, pickLocation])
     })
 
     app.get("/checkRide/:id",async (req,res)=>{
@@ -89,5 +96,14 @@ dbConnection.once("open", () => {
         }
   
     })
+
+    async function getCoordonates(city) {
+        return await fetch('https://api.api-ninjas.com/v1/geocoding?city=' + city,
+        {
+            headers: {
+                'X-Api-Key': apiKey
+              }
+        }).then((rawCoordonate)=>rawCoordonate.json()).then((data)=>{return data});
+    }
 
 })
