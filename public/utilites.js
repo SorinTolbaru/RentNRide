@@ -25,18 +25,18 @@ $.ajax({
 
 
   //get user info
-  let database;
-  let session_ID = localStorage.getItem("session_ID")
+  let session_ID = localStorage.getItem("session_ID");
+
 $.ajax({
-    url:"/usersData",
+    url:"/userData",
     method:"GET",
+    data:{id:session_ID},
     success:function(data){
-        database = data;
-        let foundUser = database.find(e=>e._id == session_ID)
+        let foundUser = data.user;
 
         //get reviews
         if(window.location.pathname == "/page.html"){
-            database.map(e=> e.review.comment.length > 1 ? $(".swiper-wrapper").append(UiElements.buildReviews(e)):null)
+            data.reviews.map(e=> $(".swiper-wrapper").append(UiElements.buildReviews(e)))
         }
         if(foundUser && session_ID != null){
             $("#account,#account-mobile").html(`<div class="account-user">${foundUser.user}<div>`)
@@ -118,8 +118,20 @@ $.ajax({
     }
 })
 
- export function accountCheck(){
-    if(database.find(e=>e._id == session_ID) && session_ID != null){
+ export async function accountCheck(){
+    const isValid = await $.ajax({
+        url: '/checkAccount',
+        method: 'GET',
+        data:{id:session_ID},
+        success: function (idValid) {
+            return idValid
+        },
+        error: function (error) {
+            console.error('GET Request Error:', error);
+        }
+    });
+    
+    if(isValid && session_ID != null){
         window.location.href = "account.html" 
     }else{
         $(".login-form").length < 1 ? $(".register-form").length < 1 ? $("body").append(UiElements.loginForm) : null : null
@@ -145,11 +157,10 @@ $.ajax({
             $(this).parent()[0].remove()
         })
 
-        //check register info
+        //set register info
         $(".register-form").on("submit",function(e){
                 e.preventDefault();
                 const newUser = {}
-                database.find(e => e.email == $("#registerEmail").val()) ? $("#wrongData").addClass("display"):(
                     newUser.email = $("#registerEmail").val(),
                     newUser.user = $("#registerUser").val(),
                     newUser.pass = $("#registerPassword").val(), 
@@ -169,16 +180,26 @@ $.ajax({
                         drop_time:null
                       },
                     addUser(newUser)
-                    );
+                    
             })
         })
 
         //check login info
-        $(".login-form").on("submit",function(e){
+        $(".login-form").on("submit",async function(e){
             e.preventDefault();
-            let index = database.indexOf(database.find(e => e.email == $("#loginEmail").val()))
 
-            database[index].pass == $("#loginPassword").val() ? (localStorage.setItem("session_ID",database[index]._id,window.location.reload())) : $("#wrongData").addClass("display");
+             $.ajax({
+                url:"/loginUser",
+                method:"POST",
+                contentType: "application/json",
+                data:JSON.stringify({email:$("#loginEmail").val(),pass:$("#loginPassword").val()}),
+                success:function (isValid){
+                    isValid ? (localStorage.setItem("session_ID",isValid,window.location.reload())) : $("#wrongData").addClass("display")
+                },
+                error:function(error){
+                    console.error('GET Request Error:', error);
+                }
+            })
             }
         )
 
@@ -364,8 +385,7 @@ export function addUser(userData){
         contentType: "application/json",
         data: JSON.stringify(userData),
         success: function (userid) {
-                localStorage.setItem("session_ID",userid)
-                window.location.reload()
+            userid ? (localStorage.setItem("session_ID",userid),window.location.reload()) : $("#wrongData").addClass("display")
         },
         error: function (error) {
             console.error('POST Request Error:', error);
@@ -406,9 +426,25 @@ export function modifyRide(user,incr,ride,review){
   }
 
 
+  function calculateDaysBetweenDates(date1, date2) {
+    const startDate = new Date(date1);
+    const endDate = new Date(date2);
+  
+    const timeDifference = endDate - startDate;
+  
+    const millisecondsInDay = 24 * 60 * 60 * 1000;
+  
+    const daysDifference = Math.floor(timeDifference / millisecondsInDay);
+  
+    return daysDifference;
+  }
+
+
+
+
 //Calculate final price for selected Ride
 export function calculateRide(db, dataId,convertedCurrency){
-    let finalPrice =  Math.floor(db[dataId].rent_price * convertedCurrency * db[dataId].agency_commission / 100 * (Number(localStorage.getItem("dropD").split("-")[2]) - Number(localStorage.getItem("pickD").split("-")[2]))) 
+    let finalPrice =  Math.floor(db[dataId].rent_price * convertedCurrency * db[dataId].agency_commission / 100 * calculateDaysBetweenDates(localStorage.getItem("pickD"),localStorage.getItem("dropD"))) 
     finalPrice == 0 ? finalPrice = Math.floor(db[dataId].rent_price * convertedCurrency * db[dataId].agency_commission / 100) : null
     return finalPrice
 }

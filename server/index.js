@@ -43,10 +43,30 @@ dbConnection.once("open", () => {
         res.send(allCars)
     })
 
-    app.get("/usersData",async (req,res)=>{
-        let allAccounts = await Accounts.find({})
-        res.send(allAccounts)
+    app.get("/userData",async (req,res)=>{
+        let account;
+        if(req.query.id.length <= 0){
+            account = false
+        }else{
+            account = await Accounts.findOne({_id:req.query.id})
+        } 
+  
+        let accountsReviews = await Accounts.find({}, { user: 1, review: 1, _id:0});
+        reviews = accountsReviews.filter((e)=> e.review.comment.length > 1)
+        const data = {user: account,reviews:reviews}
+        res.send(data)
     })
+
+    app.get("/checkAccount",async (req,res)=>{
+        let isValid;
+        if(req.query.id.length <= 0){
+            isValid = false
+        }else{
+            isValid = await Accounts.findOne({_id:req.query.id})
+        } 
+        res.send(isValid)
+    })
+
 
     app.get("/getDistance",async (req,res)=>{
         const {drop, pick} = req.query
@@ -67,6 +87,8 @@ dbConnection.once("open", () => {
 
     app.post("/newUser",async (req,res)=>{
         let data = req.body;
+        let account = await Accounts.findOne({email:data.email})
+        if(!account){
         const newAccount = new Accounts({
             email:data.email,
             user: data.user,
@@ -78,10 +100,19 @@ dbConnection.once("open", () => {
     })
         newAccount.save();
         res.send(newAccount._id)
+    }else{
+        res.send(false)
+    }
+    })
+
+    app.post("/loginUser", async (req, res)=>{
+        const {email, pass} = req.body
+        let account = await Accounts.findOne({email:email})
+        const isValid = account.pass === pass ? account._id : false
+        res.send(isValid)
     })
     
     app.put("/modifyRide/:id/:carname",async(req,res)=>{
-        console.log(req.params.id,req.params.carname);
         try{
            await Accounts.updateOne(
                 { _id:req.params.id },
